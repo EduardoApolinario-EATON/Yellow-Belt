@@ -1,0 +1,39 @@
+# ==========================================================
+# Dados sensiveis / arquivos locais (NAO versionar)
+# ==========================================================
+# Arquivo da macro com possiveis dados reais de clientes (CNPJ, NF, chave de acesso).
+# Mantido apenas localmente para extracao das regras. NAO commitar.
+referencias/macro_antiga/IMPRESSAO.xlsb
+referencias/macro_antiga/IMPRESSAO*.xlsb
+**/BANCO DE DADOS - PAGA GUIA*.xlsb
+
+# ==========================================================
+# Dados sensiveis JA EXISTENTES (removidos do rastreio em 2026-06-23)
+# Contem dados reais de clientes: CNPJ, NF, chave de acesso, razao social, enderecos.
+# Mantidos apenas localmente. NAO commitar.
+# ==========================================================
+referencias/exemplos/*.xlsb
+referencias/exemplos/*.zip
+referencias/macro_antiga/Premissas*.csv
+referencias/macro_antiga/Premissas*.xlsx
+
+# Rede de seguranca: nenhuma planilha binaria/dado tabular bruto deve ser versionado
+*.xlsb
+*.xlsm
+*.xls
+
+# Arquivos temporarios do Office
+~$*.xls*
+*.tmp
+
+# Saidas locais de extracao (geradas para analise, nao versionar)
+referencias/macro_antiga/_extraido/
+
+# ==========================================================
+# PDFs de NF-e (dados fiscais reais: CNPJ, chave de acesso, razao social, endereco)
+# Amostras de nota fiscal. NAO versionar. Mantidos apenas localmente.
+# Removidos do rastreio em 2026-08-14.
+# ==========================================================
+materiais/dfe_*_nfes/
+**/dfe_*_nfes/
+**/*_nfes/

@@ -1,0 +1,28 @@
+# Este arquivo define quem deve revisar/aprovar mudanças em quais partes do repo.
+# Coloque na raiz do repo como: .github/CODEOWNERS
+
+# Exemplo genérico para seu chefe customizar:
+
+# Tudo por padrão requer aprovação do dono
+* @seu-usuario-github
+
+# Documentação
+docs/ @seu-usuario-github
+*.md @seu-usuario-github
+README.md @seu-usuario-github
+
+# Workflows e CI/CD
+.github/ @seu-usuario-github
+.github/workflows/ @seu-usuario-github
+
+# Exemplos específicos (customize conforme time):
+# *.sql @seu-dba
+# src/backend/ @dev-backend
+# src/frontend/ @dev-frontend
+# tests/ @qa-team
+
+# Notas:
+# - Usuários são mencionados com @
+# - Grupos de time: @org/team-name
+# - Cada pessoa/time listada DEVE aprovar PR antes de merge
+# - Você (dono) pode colocar a si mesmo em tudo para controlar tudo

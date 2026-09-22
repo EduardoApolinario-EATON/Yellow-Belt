@@ -1,0 +1,43 @@
+-- ============================================================================
+-- FONTE DE VERDADE do dataset Expedição AFT (QUERY_AFTK.xlsx)
+-- Query PL/SQL original que a macro VBA (IMPRESSAO.xlsb) consome.
+-- A macro NAO calcula nada: le a coluna D = SUB_LOC ja pronta desta query.
+-- Salvo para referencia de implementacao do Modelo_Expedicao (NotasFiscais).
+--
+-- Variantes:
+--   Query 2 = registros de OLEO      (C.GLOBAL_ATTRIBUTE3 IN ('6.655','5.655'))
+--   Query 3 = registros NAO-OLEO     (C.GLOBAL_ATTRIBUTE3 NOT IN (...))
+--   (SELECT identico; o CASE do SUB_LOC trata os dois casos internamente)
+--   + UNION ALL com bloco RIL (RA_INTERFACE_LINES) para volumes/multi-locator.
+--
+-- FONTES QUE O SUB_LOC EXIGE (nao estao 100% no DEV ainda):
+--   - MTL_ITEM_LOCATIONS  (locator SEG1.SEG2.SEG3 via WDD.LOCATOR_ID)  -> INV
+--   - MTL_SYSTEM_ITEMS    (SEGMENT1 do item, caso OLEO)                -> INV
+--   - MTL_ITEM_CATEGORIES + MTL_CATEGORY_SETS + MTL_CATEGORIES_B (BRA MFG='A') -> INV
+--   - OE_ORDER_HEADERS + OE_ORDER_LINES (SHIPMENT_PRIORITY_CODE)       -> ONT
+--   - RA_SITE_USES_ALL + RA_ADDRESSES_ALL.GLOBAL_ATTRIBUTE3/4/5 (CNPJ / UF) -> AR
+--
+-- SUB_LOC (coluna D) =
+--   base || ' ' || shipment_priority_code || ' ' || (EMBREAGEM_DSH | null)
+--   base:
+--     CFOP oleo (6.655/5.655) -> 'OLEO_' || MTL_SYSTEM_ITEMS.SEGMENT1 (item da linha 1)
+--     senao GLOBAL_ATTRIBUTE19 (HEADER A) is null -> MIL.SEGMENT1.SEGMENT2.SEGMENT3
+--     senao -> A.GLOBAL_ATTRIBUTE19 (header)
+--   suffix EMBREAGEM_DSH: item categoria BRA MFG SEGMENT1='A' E priority='DIRECT SHIPMENT'
+--
+-- CNPJ = SUBSTR( RAA.GA3||GA4||GA5 , 2, 14 )  via RA_SITE_USES(BILL_TO) do SHIP_TO addr
+-- UF   = RA_ADDRESSES.STATE via RA_SITE_USES do SHIP_TO_SITE_USE_ID
+-- CFOP = C.GLOBAL_ATTRIBUTE3 || ' ' || (S_ST se soma ICMS-ST=0 senao C_ST)
+-- CASE_RILA = OK se SUM(QUANTITY_ORDERED por CT_REFERENCE)=SUM(SHIPPED_QUANTITY por DELIVERY OE)
+-- STATUS = DECODE(B.STATUS, 1/3/5/7/8=ERRO, 4/6=CANCELADO, 2=FINALIZADO)
+--
+-- Filtros-chave do FROM principal:
+--   D.NAME IN ('VALI AFT VENDA AUTOMATICA','VALI AFT VENDA AUTOMATICA OLD')
+--   B.STATUS NOT IN ('4','6'); UF <> 'EX'; C.NAME <> 'SI COMPL PRECO C/AR'
+--   A.ORG_ID='1344'; WDD.SOURCE_CODE='OE'; CTLA.LINE_TYPE='LINE'
+--   WDD.SOURCE_LINE_ID = CTLA.INTERFACE_LINE_ATTRIBUTE6
+--   MIL.INVENTORY_LOCATION_ID = WDD.LOCATOR_ID ; MIL.ORGANIZATION_ID = CTLA.WAREHOUSE_ID
+-- ============================================================================
+
+-- Veja o texto completo das 3 queries no historico da conversa / anexo do usuario
+-- (2026-07-24). Este arquivo e a nota-mestra; a query e o contrato do dataset.
