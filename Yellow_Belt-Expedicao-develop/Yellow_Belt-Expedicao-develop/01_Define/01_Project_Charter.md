@@ -1,5 +1,17 @@
 # Project Charter — Redução de retrabalho na expedição
 
+> **Revisão documental: 2026-10-14.** Charter histórico: prazos, ganhos e aprovações abaixo não foram reconfirmados. O problema e a finalidade são preservados; status vigente e aceite estão nas referências a seguir.
+
+## Situação e critérios atuais
+
+Power BI, atualizar modelo, paga guias e classificar PDFs no SharePoint foram confirmados como funcionais. Isso não comprova go-live, redução de tempo ou substituição integral da macro. Dataset é cópia; o modelo oficial continua no orquestrador. Escopo da entrega: documentação Markdown para Expedição e TI, sem alteração da ferramenta.
+
+Aceite: conciliação por chave, classificação/regras aprovadas, filtros versus fluxo homologados, proteção contra duplicação, impressão e recuperação testadas, titulares/substitutos definidos. Ganho deve ser medido contra baseline aprovado, não declarado a partir de projeção.
+
+Referências: [pendências atuais](../03_Analyze/07_Open_Questions.md), [manual da expedição](../05_Control/05_Manual_Operador.md), [handoff de TI](../04_Improve/05_Implementacao/HANDOFF.md).
+
+## Charter histórico
+
 > Carta do projeto Yellow Belt. Consolida problema, objetivos, escopo, time, cronograma e premissas.
 > Última atualização: 2026-05-28
 

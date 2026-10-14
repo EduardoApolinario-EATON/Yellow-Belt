@@ -1,4 +1,52 @@
-# 🗺️ Mapa Completo de Regras — AS-IS → Solução
+# Mapa de Regras - Implementação Atual e Legado
+
+> **Revisão vigente: 2026-10-14.** Este mapa separa implementação observada de regra histórica e aceite de negócio. Base: [TMDL atual](../../../Dataset/Modelo_Expedicao_ATUAL.SemanticModel/definition/tables/NotasFiscais.tmdl). O catálogo antigo abaixo é referência do legado, não evidência de migração integral.
+
+## Regras observadas no Power BI
+
+| Bloco | Implementação atual | Diferença / validação necessária |
+|---|---|---|
+| Entrada | ORG 1344, COMPLETE_FLAG Y, duas batch sources AFT | Sem filtro local de hoje nem exclusão geral local de canceladas |
+| Exclusões | Tipo SI COMPL PRECO C/AR e UF EX | Nulos são mantidos; origem Bronze define parte do universo |
+| Status | CLL 2 FINALIZADO; 4/6 CANCELADO; nulo SEM_STATUS; demais ERRO | Cancelada pode existir no modelo como não apta |
+| Aptidão | FINALIZADO + CASE_RILA OK + CHAVE_LEN 44 | Não valida dígitos/DV, guia paga, existência de PDF ou prisma |
+| RILA | Soma QUANTITY_ORDERED AR = soma SHIPPED_QUANTITY OE, ambas não nulas | Não presumir equivalência integral ao agrupamento SQL por delivery; testar paridade |
+| Guia | AC/AM/AP/RO/RR sempre; AL/DF/GO/MS/TO se ICMS_ST não zero | Usa imposto, não EXTENDED_AMOUNT de produtos; regra fiscal deve ser homologada |
+| ICMS-ST | Lookup ativo -> TAX_CODE -> VAT_TAX_ID -> TAX EXTENDED_AMOUNT | Lookup/configuração pertencem às origens |
+| FCP-ST | Dez VAT_TAX_ID fixos | Validar vigência com Fiscal |
+| Prisma | Óleo/item; senão GA19; senão locator; concatena prioridade reconhecida | Categoria EMBREAGEM_DSH não implementada; prisma ausente não impede APTA |
+| Locator | Prefere WSH Y/C não nulo; mínimo textual; fallback mínimo disponível | Não exige STG; conferir LOC_ALL/SUBINV_ALL/REL_ALL |
+| WSH | WSH_DOC, recorte local 45 dias e deduplicação | Não usar orientação histórica WSH_DOC_CUR como descrição atual |
+| Mãe/filha | Menor NF numérica por delivery; filhas referenciam mãe e recebem volume 0 | Não é repetição do par NF+delivery nem substring da chave |
+| Ordenação | Guia desc, SORT_SUBLOC da mãe asc, delivery asc, NF asc; índice 1..n | Não é ID persistente; filtro visual não renumera |
+| Destino | Guia antes de aptidão; depois óleo/apta, pronto/apta e exceções | AGUARDANDO GUIA pode conter não apta; pasta não libera embarque |
+| Arquivo | PAGA GUIA ou EXPEDICAO + letra/posição + NF; demais DFE/chave | Sem data no nome atual; sequência do spooler requer teste |
+| CNPJ | Dígitos de HZ_PARTIES.JGZZ_FISCAL_CODE | Não replica necessariamente CNPJ BILL_TO/filial de 14 dígitos |
+| Cliente | PARTY_NAME completo | Não aplica SUBSTR de 20 caracteres |
+| Histórico | STATUS_CICLO em DAX por chave em lista importada | Não prova bloqueio do fluxo ou impressão física |
+| Multi-locator | Flag de mais de um locator distinto em LOC_ALL | Visual usa NotasFiscais; auxiliar MesmaNF_OutroLocator está vazia |
+
+## Matriz de destino: ordem importa
+
+1. PAGA_GUIA SIM: AGUARDANDO GUIA, independentemente de APTA.
+2. Sem guia, APTA Sim e CFOP 6.655/5.655: OLEO.
+3. Sem guia, demais APTA Sim: PRONTO.
+4. Demais: EXCECAO/* pelo MOTIVO, que prioriza comprimento inválido da chave antes dos erros fiscal/delivery.
+
+Nenhuma dessas regras comprova liberação da guia ou impressão. O cálculo de guia e a atividade do botão Paga Guia são contratos distintos.
+
+## Fora da comprovação desta revisão
+
+Inscrições estaduais, categoria de embreagem, e-mails, PIN, ZIP, timer 06:30, retorno de guia, limpeza por idade e limites do banco legado não são funcionalidades comprovadas pelo PBIP. Download manual/API/RPA SYNCHRO depende do procedimento confirmado. Power Automate é funcional conforme relato, mas seu algoritmo precisa de export para auditoria.
+
+## Fontes e precedência documental
+
+Para explicar comportamento da cópia: TMDL/JSON atual. Para autorizar regra: homologação de negócio, ainda pendente. Para paridade: queries e macro como referências históricas, comparadas com amostra autorizada. O código descreve o que ocorre; não define sozinho o que deve ser fiscalmente autorizado.
+
+Referências: [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md), [Dicionário](01_PowerBI/01_Dataset_Schema.md), [Pendências](../03_Analyze/07_Open_Questions.md).
+
+<details>
+<summary>Catálogo do legado de junho/2026: histórico e hipóteses de migração</summary>
 
 > Catálogo **exaustivo** de todas as regras de negócio existentes (queries Oracle + macro VBA + `IMPRESSAO.xlsb`), com a **fonte** de cada uma e o **status de implementação** na solução Power BI + Power Automate.
 > **Última atualização:** 2026-06-23
@@ -253,3 +301,5 @@ SENÃO "NÃO PAGA"
 - [04_Improve/01_PowerBI/04_Fluxo_Classificacao_Analise.md](01_PowerBI/04_Fluxo_Classificacao_Analise.md) — matriz de roteamento
 - [04_Improve/01_PowerBI/01_Dataset_Schema.md](01_PowerBI/01_Dataset_Schema.md) — colunas do dataset
 - [03_Analyze/07_Open_Questions.md](../03_Analyze/07_Open_Questions.md) — dúvidas priorizadas
+
+</details>

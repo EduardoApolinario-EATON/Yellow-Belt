@@ -1,79 +1,41 @@
-# 🧑‍🏭 Modo de Uso — Operador
+# Guia Rápido - Operador da Expedição
 
-> Guia simples: como rodar o ciclo de expedição do começo ao fim.
-> **Imprima esta página e deixe na bancada.**
+Revisão: 2026-10-14. Referência de treinamento; liberação da rotina depende de confirmar acessos, pastas e responsáveis no [manual completo](../05_Control/05_Manual_Operador.md). Os PDFs antigos desta pasta não foram atualizados.
 
----
+## Antes de começar
 
-## O que você precisa
-- Computador na rede Eaton, com acesso às pastas da expedição (no **Explorador de Arquivos**).
-- Acesso ao **Power BI** (o relatório da expedição).
-- Impressora ligada e com papel.
+Tenha acesso ao relatório, à biblioteca SharePoint autorizada, ao SYNCHRO e à impressora. Não use o botão `PAGA GUIA [TESTE]`. Não misture PDFs de rodadas diferentes.
 
----
+## Sequência do ciclo
 
-## O ciclo em 7 passos
-
-**1. Baixar os PDFs do SYNCHRO**
-Baixe do SYNCHRO os PDFs das notas do ciclo, como você já faz.
-
-**2. Colocar os PDFs na pasta ENTRADA**
-Copie/mova os PDFs para a pasta **ENTRADA** (no Explorador de Arquivos).
-
-**3. Esperar ficar tudo ✅ verde**
-Aguarde **todos** os PDFs ficarem com o **✔️ verde** (sincronizados na nuvem). Ícone de nuvem azul/setas = ainda subindo → **espere**.
-
-**4. Abrir o relatório no Power BI**
-Abra o relatório e olhe a página **Visão Geral** — ela mostra os totais do ciclo (quantas prontas, paga guia, óleo, exceções).
-
-**5. Conferir se bate**
-Confira se o total de NFs do relatório **corresponde** aos PDFs que você colocou na ENTRADA. Se estiver muito diferente, **pare** e confira (veja "Se algo der errado").
-
-**6. Clicar em "Processar Ciclo"**
-No relatório, clique no botão **Processar Ciclo**. Aguarde alguns minutos — o sistema classifica, renomeia e organiza os PDFs.
-
-**7. Imprimir da pasta SAIDA**
-Abra a pasta **SAIDA / (ciclo)** no Explorador e imprima cada destino **na ordem** (veja abaixo).
-
----
-
-## As pastas de destino (dentro de SAIDA)
-
-| Pasta | O que é | O que fazer |
+| Etapa | Ação | Conferência |
 |---|---|---|
-| **PRONTO** | Notas aptas | Imprimir e separar |
-| **AGUARDANDO GUIA** | Depende da guia (ICMS-ST) | Imprimir e encaminhar conforme o fiscal |
-| **OLEO** | Notas de óleo | Fluxo específico do óleo |
-| **EXCECAO** | Não classificadas | **Tratar à parte** (não imprimir junto) |
+| 1 | Abrir Lista de Impressão e conferir o período de faturamento e os filtros | A lista deve corresponder à rodada pretendida |
+| 2 | Se necessário, usar ATUALIZAR DATASET uma vez | Aguardar conclusão do refresh e recarregar os visuais; se não houver confirmação, acionar suporte |
+| 3 | Obter os PDFs pelo procedimento SYNCHRO aprovado e colocá-los na pasta de origem autorizada | Caminho e procedimento de download: a confirmar. Conferir presença dos arquivos no SharePoint, não só no computador |
+| 4 | Comparar os PDFs e a lista por chave de acesso | Contagem igual não prova correspondência; verificar chaves, aptidão e notas já processadas |
+| 5 | Acionar PROCESSAR PDFs uma vez, somente após a conferência e autorização do universo processado | Não presumir que filtros da tela restringem o fluxo; esse vínculo deve ser homologado |
+| 6 | Aguardar conclusão e conferir as pastas resultantes | Arquivos sem destino, erros e movimentos parciais precisam de análise antes de novo disparo |
+| 7 | Imprimir apenas o lote autorizado e conferir a sequência física | Ordenar por nome; validar ordem no leitor PDF/impressora e registrar o lote concluído |
 
-### Como imprimir na ordem certa
-1. Abra a pasta do destino.
-2. Ordene por **Nome** (clique no cabeçalho "Nome").
-3. Selecione tudo (**Ctrl+A**) → botão direito → **Imprimir**.
-O nome dos arquivos (A, B, C, D…) já garante a ordem física de separação.
+## Como tratar os destinos
 
----
-
-## ⚠️ 2 regras de ouro
-
-1. **Só clique "Processar Ciclo" com os PDFs todos ✅ verdes.** Se estiverem subindo, o sistema não acha o arquivo.
-2. **Não reimprima um ciclo já processado.** O sistema tem memória: notas já impressas voltam como **JA_IMPRESSO** e não são reprocessadas.
-
----
-
-## Se algo der errado
-
-| Aconteceu | O que fazer |
+| Classificação no modelo | Conduta |
 |---|---|
-| Cliquei "Processar Ciclo" e **nada moveu** | Confira se os PDFs estavam **✅ verdes** antes. Se estavam subindo, espere e clique de novo. |
-| **Quase tudo caiu em EXCECAO** | Sinal de que os PDFs **não são do ciclo** que o relatório mostra. Confira se o relatório está mostrando o ciclo certo antes de processar. |
-| Uma nota **não apareceu** em nenhuma pasta | Pode já ter sido impressa antes (**JA_IMPRESSO**). Confirme com o supervisor. |
-| Os **números do relatório** parecem velhos | O dado atualiza pelo refresh (pode levar alguns minutos). Se persistir, avise o responsável. |
-| Impressora travou / sem papel | Resolva na impressora e **reimprima só o lote afetado**. |
+| PRONTO | Conferir aptidão, prisma e ausência de pendências antes de imprimir |
+| AGUARDANDO GUIA | Segregar e aguardar orientação/liberação do Fiscal. Pode conter nota não apta; não liberar só pelo nome da pasta |
+| OLEO | Seguir rotina de óleo validada pelo supervisor |
+| EXCECAO/* | Não imprimir junto do lote normal; tratar motivo com Fiscal, Armazém ou TI |
 
----
+Os nomes acima são valores do modelo. Caminhos físicos e subpastas do fluxo precisam ser confirmados. O botão `Paga Guia` é funcional, mas seu procedimento e resultado ainda precisam ser detalhados pelo responsável; não presumir pagamento automático.
 
-## Resumo em uma frase
-**Baixou do SYNCHRO → jogou na ENTRADA → esperou o ✅ verde → conferiu no relatório → clicou Processar Ciclo → imprimiu da SAIDA na ordem.**
+## Pare e peça apoio quando
 
-> Para o manual completo (todos os detalhes), veja o [Manual do Operador](../05_Control/05_Manual_Operador.md).
+- A nota não aparecer, a chave não corresponder, o prisma estiver ausente ou a lista parecer desatualizada.
+- Houver `JA PROCESSADA`: é presença no histórico importado, não prova de impressão física. Conferir antes de reimprimir.
+- O botão der erro ou mover só parte dos arquivos: registrar horário, filtros e evidências; não clicar repetidamente.
+- A impressora interromper: identificar exatamente o lote afetado e obter autorização para reimpressão. Não apagar histórico nem reprocessar todo o ciclo.
+
+`PENDENTE` significa chave ausente do histórico importado; não é liberação fiscal. `SEM CHAVE` exige análise da chave. Um ícone de nuvem não significa, por si só, falha: o arquivo pode estar disponível online; a conferência decisiva é na biblioteca SharePoint.
+
+Contatos e caminhos: a confirmar no [Manual do Operador](../05_Control/05_Manual_Operador.md).

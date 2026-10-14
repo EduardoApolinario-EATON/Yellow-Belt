@@ -1,5 +1,9 @@
 # materiais/ — Recursos visuais e artefatos do projeto
 
+> **Revisão documental: 2026-10-14.** Apresentações, BPI e outros binários são materiais históricos; não foram regenerados nem certificados como entrega atual. A documentação vigente é [Markdown](../docs_ferramenta/README.md).
+
+PDFs fiscais/amostras contêm dados restritos: não incluir em entrega pública, commits ou chamados. A revisão textual do projeto não comprova conteúdo, cálculo ou resultados de cada binário. Usar amostras autorizadas/anonimizadas para homologação; baseline e ganhos requerem validação conforme [Measure](../02_Measure/README.md).
+
 > Apresentações, diagramas BPI, e outros materiais não-código.
 > Última atualização: 2026-05-28
 

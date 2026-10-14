@@ -1,5 +1,15 @@
 # Time e Stakeholders
 
+> **Revisão documental: 2026-10-14.** A lista original é histórica; nomes, disponibilidade e atribuições individuais precisam de reconfirmação. Não presumir que o autor continuará como único suporte.
+
+## Responsabilidade operacional por papel
+
+Expedição: rodada, conferência e impressão. Supervisor: autorização de rotina/reimpressão e escalonamento. Fiscal: regras, guia e liberação. Armazém: delivery e localização. BI/Dados: modelo, origens e refresh. Automação/TI: fluxos, conexões, acesso, incidentes e recuperação. Plataforma/Compliance: licenças, DLP e retenção.
+
+Titular, substituto e canal de contato de cada papel: **a confirmar**. Formalizar aceite e transferência no [Handoff](../04_Improve/05_Implementacao/HANDOFF.md) e no [Manual do Operador](../05_Control/05_Manual_Operador.md).
+
+## Time registrado originalmente
+
 > Mapeia papéis no projeto e interlocutores por área para resolver pendências.
 > Última atualização: 2026-05-28
 

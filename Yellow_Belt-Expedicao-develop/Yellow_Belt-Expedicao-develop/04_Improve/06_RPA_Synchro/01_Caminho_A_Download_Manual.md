@@ -1,5 +1,9 @@
 # 📥 Caminho A: Download Manual → OneDrive/SharePoint
 
+> **Revisão: 2026-10-14.** Roteiro proposto/histórico; sequência e export atual do SYNCHRO não foram confirmados nesta revisão. Não prometer nome DFE/chave, lote ZIP ou compatibilidade sem amostra autorizada.
+
+Na rotina aprovada, conferir arquivos na biblioteca online e conciliar por chave antes de PROCESSAR PDFs. Ícone de nuvem pode representar arquivo disponível online; não é necessariamente upload pendente. Ver [Manual do Operador](../../05_Control/05_Manual_Operador.md) e [P02/P18](../../03_Analyze/07_Open_Questions.md).
+
 > Procedimento operacional para ingesta de PDFs (TO-BE imediato).  
 > **Último update:** 2026-06-22
 

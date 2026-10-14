@@ -1,5 +1,9 @@
 # Fase 03 — Analyze
 
+> **Índice revisado: 2026-10-14.** Análises 01-06 são estudos do legado/arquitetura inicial. O estado atual é o da cópia TMDL/JSON, sem garantia de paridade integral.
+
+Prioridade para entrega: [Pendências P01-P19](07_Open_Questions.md), [Mapa de Regras](../04_Improve/07_Mapa_de_Regras.md) e [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md).
+
 Esta fase disseca tecnicamente o processo atual: análise das 3 queries Oracle, restrições arquiteturais (Power BI × views EBS), causa-raiz do gargalo e perguntas pendentes para outras áreas.
 
 ## Documentos desta fase

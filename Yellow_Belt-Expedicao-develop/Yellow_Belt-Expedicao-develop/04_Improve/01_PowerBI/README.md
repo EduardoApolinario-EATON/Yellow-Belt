@@ -1,5 +1,9 @@
 # 📊 Power BI — Overview
 
+> **Índice revisado: 2026-10-14.** O contrato vigente é o [Dicionário de 39 colunas](01_Dataset_Schema.md), não a proposta de 23. [Modelo Semântico](03_Modelo_Semantico.md) separa arquitetura atual do estudo original.
+
+Fontes, medidas, sete telas e manutenção: [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md). O prompt e os arquivos de teste_offline são recursos de construção/simulação, não modelo publicado nem prova de paridade. PBIP oficial no orquestrador; Dataset é cópia de referência. Não alterar M/TMDL por exemplos antigos sem comparar com o oficial.
+
 > Criação do dataset consolidado de 23 colunas.  
 > **Último update:** 2026-06-22
 

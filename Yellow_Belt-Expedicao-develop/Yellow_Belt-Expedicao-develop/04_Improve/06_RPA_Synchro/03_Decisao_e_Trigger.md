@@ -1,5 +1,9 @@
 # 🔀 Decisão e Trigger: Quando Migrar A → B?
 
+> **Revisão: 2026-10-14.** Critérios históricos de evolução, não trigger comprovado do processo atual. O relatório contém botões manuais; detecção automática de fim de bipagem não foi demonstrada.
+
+Confirmar download e cadência reais antes de decidir migração. Não confundir opções de acesso Oracle com A/B de obtenção de PDF. Critérios futuros devem usar ganho medido, segurança, licença e confiabilidade aprovados; ver [P12/P17/P18](../../03_Analyze/07_Open_Questions.md).
+
 > Critério objetivo para passar de Manual (A) para RPA (B).  
 > **Último update:** 2026-06-22
 

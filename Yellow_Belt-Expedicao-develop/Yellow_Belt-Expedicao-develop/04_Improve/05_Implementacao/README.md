@@ -1,5 +1,9 @@
 # 🚀 Implementação — Overview
 
+> **Índice revisado: 2026-10-14.** O roadmap original não é cronograma vigente nem prova de conclusão. Há modelo e três ações funcionais confirmadas; produção, aceite e transferência precisam de evidências.
+
+Usar [Handoff atual](HANDOFF.md), [Checklist de aceite](02_Checklist.md) e [P01-P19](../../03_Analyze/07_Open_Questions.md). Não publicar pela cópia Dataset nem por exemplos antigos; comparar com o PBIP oficial do orquestrador.
+
 > Roadmap: como levar a solução à produção.  
 > **Último update:** 2026-06-22
 

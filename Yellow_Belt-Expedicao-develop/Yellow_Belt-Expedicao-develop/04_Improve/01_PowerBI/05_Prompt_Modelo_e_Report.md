@@ -1,5 +1,9 @@
 # PROMPT — Construção do Modelo Semântico e Report (Power BI) — Projeto Expedição AFT
 
+> **Revisão: 2026-10-14.** Prompt histórico de construção, não especificação para recriar/substituir o modelo atual. Não executar suas instruções contra produção.
+
+O PBIP já existe: Dataset é cópia atual e o orquestrador é fonte oficial. Há 39 colunas, 12 medidas e sete páginas. Mudanças devem partir do oficial, do [Dicionário](01_Dataset_Schema.md) e do [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md), com testes e aceite; não dos campos/relacionamentos propostos neste prompt.
+
 > Prompt autocontido para colar em um agente de IA (Power BI Copilot, ChatGPT, Claude etc.)
 > encarregado de construir o modelo semântico e o report. Regras extraídas e validadas a partir
 > das queries Oracle EBS R12 e da macro VBA legada (ver [07_Mapa_de_Regras.md](../07_Mapa_de_Regras.md)).

@@ -1,4 +1,39 @@
-# 📋 Yellow Belt — Automação de Expedição (Eaton Valinhos)
+# Yellow Belt - Automação de Expedição (Eaton Valinhos)
+
+> **Índice vigente: 2026-10-14.** A documentação foi reconciliada com a cópia atual do Power BI e com a confirmação do responsável. O índice antigo está preservado como histórico, não como status de entrega.
+
+## Comece pelo seu papel
+
+| Público | Documento principal | Complemento |
+|---|---|---|
+| Operador | [Guia rápido](docs_ferramenta/02_Modo_de_Uso_Operador.md) | [Manual completo](05_Control/05_Manual_Operador.md) |
+| Supervisor | [Plano de controle](05_Control/01_Plano_de_Controle.md) | [Dashboard e leitura de indicadores](05_Control/02_Dashboard_Gestao.md) |
+| TI/BI/Automação | [Manual técnico](docs_ferramenta/01_Documentacao_Tecnica.md) | [Handoff](04_Improve/05_Implementacao/HANDOFF.md) |
+| Fiscal/Armazém | [Regras](01_Define/04_Regras_Negocio.md) | [Mapa de regras e diferenças do legado](04_Improve/07_Mapa_de_Regras.md) |
+| Gestão Yellow Belt | [Baseline](02_Measure/01_Baseline_AS_IS.md) | [Pendências e homologação](03_Analyze/07_Open_Questions.md) |
+
+## Estado comprovado
+
+Power BI, atualização do modelo, paga guias e processamento de PDFs em SharePoint estão funcionais conforme o responsável. O modelo possui 39 colunas em NotasFiscais, 12 medidas e relatório de sete páginas. Ambiente produtivo, contatos, caminhos operacionais, fluxos exportados, SLAs e ganhos medidos: a confirmar.
+
+[Dataset](../../Dataset/README.md) é cópia de referência. O PBIP oficial permanece no repositório `mobility-powerbi-architecture`, em `reports/EXPEDICAO_AFT/`. As queries e a macro são referências de paridade; não substituem a descrição do comportamento atual nem o aceite fiscal.
+
+## Fases DMAIC
+
+- [Define](01_Define/README.md): problema, escopo, papéis e regras.
+- [Measure](02_Measure/README.md): baseline histórico e plano de medição; metas não são resultados.
+- [Analyze](03_Analyze/README.md): diagnóstico do legado e pendências atuais.
+- [Improve](04_Improve/README.md): implementação observada, contratos e propostas separadas.
+- [Control](05_Control/README.md): operação, suporte, auditoria e aceite.
+
+## Governança documental
+
+Entrega atual somente em Markdown. Os PDFs já existentes não foram regenerados e não são a versão vigente. Manuais e contratos atuais são identificados pela revisão de 2026-10-14. Documentos de estudo preservam sua data original e recebem indicação de histórico/proposta; não representam funcionalidades homologadas.
+
+Não publicar credenciais, caches Power BI ou amostras reais de NF-e/CNPJ/chaves. Não alterar tabelas, fluxos, regras fiscais ou estrutura de pastas para apenas adequar a documentação. Validar P01-P19 e [checklist de transferência](04_Improve/05_Implementacao/02_Checklist.md) antes de liberar rotina ou promover versão.
+
+<details>
+<summary>Índice de agosto/2026: histórico, substituído</summary>
 
 > Automação do processo de classificação de notas fiscais para expedição usando Power BI + Power Automate.
 > **Última atualização:** 2026-08-14
@@ -61,7 +96,7 @@ Operador imprime na ordem certa
 
 ### 🔍 Precisei de Referência?
 - Macro legada → [`referencias/macro_antiga/`](referencias/macro_antiga/)
-- Exemplos → [`referencias/exemplos/`](referencias/exemplos/)
+- Exemplos históricos → pasta local não disponível nesta cópia; usar apenas amostras autorizadas e anonimizadas.
 
 ---
 
@@ -134,3 +169,5 @@ Este repositório segue a estrutura **DMAIC** (Define → Measure → Analyze �
 
 **Eduardo Apolinario** — Yellow Belt Candidato, Eaton Valinhos  
 **Email:** eduardoapolinario@eaton.com
+
+</details>

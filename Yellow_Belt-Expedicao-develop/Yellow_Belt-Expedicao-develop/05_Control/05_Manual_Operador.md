@@ -1,4 +1,122 @@
-# Manual de Operação — Expedição AFT (Eaton Valinhos)
+# Manual de Operação - Expedição AFT (Eaton Valinhos)
+
+> **Versão vigente: 2026-10-14.** O procedimento abaixo substitui as instruções do anexo histórico. Acessos, caminhos e autorizações ainda precisam de validação local antes da entrega como rotina liberada.
+
+## 1. Objetivo e limites
+
+Orientar a conferência de notas fiscais, a classificação dos PDFs no SharePoint e a preparação da impressão. Power BI apresenta os dados e calcula classificação/ordem; Power Automate organiza arquivos; a equipe confere documentos e impressão física. A ferramenta não substitui liberação fiscal nem confirmação de entrega.
+
+O responsável confirmou o funcionamento de Power BI, atualização do modelo, processamento de PDFs e paga guias. Ambiente de produção, homologação e detalhes dos fluxos: a confirmar. Não executar instruções de teste como rotina.
+
+## 2. Cadastro operacional obrigatório
+
+| Informação | Valor | Quem valida |
+|---|---|---|
+| Link do relatório e ambiente autorizado | A confirmar | BI/TI |
+| Biblioteca e pasta de origem dos PDFs | A confirmar | Automação + supervisor |
+| Pastas de resultado, exceções e identificação de rodada | A confirmar | Automação + supervisor |
+| Procedimento SYNCHRO de download | A confirmar | Expedição |
+| Impressora, leitor PDF e sequência de lote homologada | A confirmar | Expedição + TI |
+| Contato do supervisor e substituto | A confirmar | Expedição |
+| Contato Fiscal/Faturamento | A confirmar | Fiscal |
+| Contato TI/BI/Automação e canal de chamado | A confirmar | TI |
+| Tempo esperado de atualização e de processamento | A confirmar | Dados + Automação |
+| Liberação e retorno de guia | A confirmar | Fiscal + Automação |
+
+O site configurado para o histórico é uma referência técnica; não deve ser tratado como caminho comprovado de entrada/saída de PDFs.
+
+## 3. Conhecendo as telas
+
+| Página | Uso pela expedição |
+|---|---|
+| Visão Geral | Observar totais, destinos e motivos para o período selecionado |
+| Lista de Impressão | Conferir ordem, guia, nota, delivery, mãe, prisma, volume, cliente, UF, transportadora, aptidão, chave, impostos e status de ciclo |
+| Monitor | Investigar notas não aptas com Fiscal/Armazém |
+| Óleo | Conferir documentação do fluxo de óleo; validar os filtros da página |
+| Chaves para Download | Consultar chaves aptas no contexto de filtros; procedimento de cópia/download a confirmar |
+| DL Etiquetas | Consultar chaves e comando *DN; rotina de etiquetas a confirmar antes de usar |
+| Mesma NF em Outro Locator | Conferir LOC_ALL e necessidade de separação em mais de um local com o Armazém |
+
+O filtro de data usa o horário de faturamento do modelo, não necessariamente o momento do processamento. Verificar também aptidão, paga guia e demais filtros ativos. Uma tela filtrada não prova que o fluxo receberá apenas as notas visíveis.
+
+## 4. Botões da Lista de Impressão
+
+| Rótulo exibido | Uso confirmado | Cuidado |
+|---|---|---|
+| ATUALIZAR DATASET | Solicitar atualização do modelo | Clique uma vez, aguarde conclusão e recarregue os visuais. Não garante atualização das origens |
+| PROCESSAR PDFs | Classificar arquivos no SharePoint conforme a ordem da Lista de Impressão | Conferir universo, origem e execução; não repetir em falha parcial |
+| Paga Guia | Fluxo de paga guias funcional | Procedimento, resultados e retorno: a confirmar com Fiscal/responsável |
+| PAGA GUIA [TESTE] | Visual de teste | Não usar na rotina liberada |
+
+Neste manual, “processar ciclo” é o nome da atividade; o botão da cópia atual se chama `PROCESSAR PDFs`.
+
+## 5. Procedimento por rodada
+
+1. Identificar a rodada com o supervisor. Abrir o relatório autorizado e conferir período e filtros na Lista de Impressão.
+2. Quando necessário, solicitar atualização pelo botão ATUALIZAR DATASET. Aguardar confirmação do término do refresh, recarregar visuais e conferir se as notas esperadas estão presentes. Sem confirmação, parar e acionar suporte.
+3. Obter os PDFs pelo procedimento SYNCHRO aprovado e colocá-los na pasta autorizada. Se usar sincronização local, confirmar a presença dos arquivos na biblioteca SharePoint pelo navegador. Ícones locais não substituem essa conferência.
+4. Conciliar por chave, não apenas por quantidade: notas esperadas, PDFs disponíveis, aptidão, guia, prisma e histórico. Uma mesma quantidade pode esconder notas diferentes.
+5. Separar pendências: notas não aptas, guia sem liberação, chave inválida, prisma desconhecido e histórico já processado. Confirmar com o responsável que o universo do fluxo corresponde à rodada, independentemente dos filtros visuais.
+6. Clicar PROCESSAR PDFs uma vez. Aguardar conclusão pelo mecanismo homologado. Não há tempo máximo comprovado nesta revisão; acionar suporte conforme o SLA a definir.
+7. Conferir resultado por chave: arquivos classificados, rejeitados, ainda na origem e registros de processamento. Movimento parcial exige reconciliação antes de repetir.
+8. Imprimir apenas notas autorizadas e conferir separação física/ordem. Registrar conclusão e pendências da rodada no controle definido pelo supervisor.
+
+## 6. Classificações e impedimentos
+
+| Valor no modelo | Significado | Ação |
+|---|---|---|
+| PRONTO | Apta, sem paga guia e sem CFOP de óleo | Conferir prisma e pendências operacionais antes da impressão |
+| AGUARDANDO GUIA | Paga guia SIM, com ou sem aptidão | Segregar; conferir APTA/MOTIVO e aguardar Fiscal. Não é autorização de expedição |
+| OLEO | Apta, sem paga guia e CFOP 6.655/5.655 | Seguir rotina de óleo aprovada |
+| EXCECAO/ERRO_NF | Fiscal não finalizado, RILA OK e chave de comprimento 44 | Fiscal/Faturamento |
+| EXCECAO/VERIFICAR_DELIVERY | Divergência de quantidade com fiscal finalizado e chave de comprimento 44 | Armazém |
+| EXCECAO/ERRO_DELIVERY_NF | Divergência de quantidade e fiscal | Armazém + Fiscal |
+| EXCECAO/CHAVE_INVALIDA | Comprimento da chave do modelo diferente de 44 | Conferir origem com BI/Fiscal; não presumir PDF ilegível |
+| EXCECAO/OUTROS | Fallback da classificação | Responsável técnico |
+
+Esses são destinos calculados pelo modelo. O mapeamento das pastas físicas deve ser confirmado no fluxo. SUB_LOC pode representar prisma digitado, locator ou óleo/prioridade; não exigir um único formato STG para todos os casos.
+
+## 7. Histórico e reimpressão
+
+| STATUS_CICLO | Interpretação |
+|---|---|
+| PENDENTE | Chave normalizada de comprimento 44 não encontrada no histórico importado; ainda verificar aptidão e documentos |
+| JA PROCESSADA | Chave encontrada no histórico importado; conferir evidência antes de novo processamento/impressão |
+| SEM CHAVE | Chave normalizada não tem comprimento 44; encaminhar para análise |
+
+O histórico só chega ao relatório no refresh. Não há comprovação nesta cópia de que o fluxo bloqueie todos os disparos duplicados nem de que DataImpressao corresponda à impressão física. Não apagar registros ou pastas para “liberar” uma nota. Reimpressão requer supervisor, identificação do lote afetado e justificativa auditável.
+
+## 8. Impressão e fechamento
+
+Os nomes calculados são `EXPEDICAO <letra><posição> - NF <nota>.pdf`, `PAGA GUIA <letra><posição> - NF <nota>.pdf` ou `DFE<chave>.pdf`. Ordenar por nome ajuda a preparar o lote, mas não garante a sequência do spooler. Usar leitor e método homologados; conferir primeira/última nota e sequência física. Não recomendar seleção indiscriminada de todos os PDFs antes de validar elegibilidade.
+
+Nota filha referencia a menor NF numérica da mesma delivery; seu volume é zero no modelo para evitar recontagem. Campo NOTA_MAE vazio pode significar mãe ou nota isolada. A ordem pode mudar no refresh; não atualizar/reclassificar no meio de um lote sem reconciliação.
+
+Ao encerrar, registrar rodada, operador, horário, notas/documentos esperados, classificados, bloqueados, impressos e pendentes. Confirmar destino físico com Armazém. Guarda, limpeza e retenção de documentos/histórico dependem de política aprovada, ainda a confirmar.
+
+## 9. Problemas e escalonamento
+
+| Situação | Conduta imediata |
+|---|---|
+| Botão falhou ou só parte moveu | Não repetir; registrar horário, filtros e evidências; acionar Automação/TI |
+| Muitas exceções ou nota ausente | Parar; conferir chaves, período, origem e refresh com BI; não atribuir automaticamente ao ciclo errado |
+| Prisma vazio ou só prioridade | Não inferir local físico; acionar Armazém + BI |
+| Guia pendente | Segregar e acionar Fiscal; não pressupor pagamento pelo botão |
+| Impressora interrompeu | Identificar lote afetado e pedir autorização para reimpressão restrita |
+| SYNCHRO/SharePoint indisponível | Suspender etapa; registrar evidência e acionar suporte |
+
+Chamado: horário, rodada, tela, filtros, ação, mensagem e ID de execução quando disponível; dados fiscais apenas em canal corporativo restrito. Nunca enviar credenciais ou notas reais em chamados públicos.
+
+## 10. Glossário e treinamento
+
+NF: nota fiscal. Delivery: referência de entrega. Prisma/SUB_LOC: referência de separação. Chave: identificador fiscal de 44 dígitos esperado pelo processo. APTA: combinação de status fiscal, quantidade e comprimento da chave no modelo. Rodada/ciclo: lote operacional definido pelo supervisor, não uma identificação automática garantida pelo filtro.
+
+Treinamento deve incluir um lote normal, óleo, guia pendente, divergência de delivery, prisma ausente, falha parcial e reimpressão autorizada. Aprovação final: Expedição, Fiscal e TI, com nomes e data a confirmar.
+
+Referências: [guia rápido](../docs_ferramenta/02_Modo_de_Uso_Operador.md), [manual técnico](../docs_ferramenta/01_Documentacao_Tecnica.md), [pendências](../03_Analyze/07_Open_Questions.md).
+
+<details>
+<summary>Anexo histórico: instruções de agosto/2026, substituídas; não usar como rotina</summary>
 
 > Documentação de uso e funcionamento para **operadores e equipe da expedição**.
 > Descreve o fluxo real: baixar NFs → colocar na pasta do ciclo → clicar **Processar Ciclo** no Power BI → imprimir na ordem certa.
@@ -151,3 +269,5 @@ Quando uma NF não pode ser classificada, ela vai para uma subpasta de **EXCECAO
 ---
 
 *Versão imprimível: a **Parte 1** cabe em 1 página — imprima e cole na bancada.*
+
+</details>

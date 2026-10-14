@@ -1,5 +1,9 @@
 # 🛠️ Manual Guiado — Criar a Estrutura SharePoint (Manual, sem script)
 
+> **Revisão: 2026-10-14.** Roteiro de criação histórico, não runbook para recriar a estrutura atual. Não criar/apagar listas ou bibliotecas sem comparar a configuração funcional e obter autorização de TI.
+
+Preservar lista NFS_IMPRESSAS, ID, nomes/tipos e conexões; o modelo Import depende dela. Biblioteca e pastas de PDFs, donos, permissões, retenção e migração: a confirmar. Fazer inventário/backup e teste em DEV antes de qualquer provisionamento. Ver [Handoff](../05_Implementacao/HANDOFF.md) e [P02/P12/P15/P16](../../03_Analyze/07_Open_Questions.md).
+
 > Passo-a-passo clique-a-clique para criar a biblioteca de pastas e as duas
 > SharePoint Lists do projeto Expedição, **sem instalar nada**.
 > Tempo estimado: ~15 min.

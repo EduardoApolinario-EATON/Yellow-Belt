@@ -1,5 +1,9 @@
 # Fase 01 — Define
 
+> **Índice revisado: 2026-10-14.** Charter, justificativa e premissas preservam o contexto original; não comprovam implantação ou ganhos. [Regras de negócio](04_Regras_Negocio.md) contém o resumo atual e distingue o legado.
+
+Para entrega à Expedição e TI, usar [documentação vigente](../docs_ferramenta/README.md). Aprovações e dados operacionais estão [a confirmar](../03_Analyze/07_Open_Questions.md).
+
 Esta fase formaliza o problema, o escopo, o time e as premissas do projeto. É a fundação sobre a qual as fases seguintes (Measure, Analyze, Improve, Control) se apoiam.
 
 ## Documentos desta fase

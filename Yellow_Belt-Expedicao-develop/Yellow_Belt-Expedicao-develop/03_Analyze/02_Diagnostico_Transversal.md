@@ -1,5 +1,9 @@
 # Diagnóstico Transversal — Padrões problemáticos das 3 queries
 
+> **Revisão documental: 2026-10-14.** Estudo das queries legadas. Não descreve diretamente as consultas M atuais nem autoriza modificar dataflows compartilhados.
+
+A cópia atual usa joins/agregações em M e múltiplos Bronze; diferenças de filtros e granularidade exigem teste de paridade. Ver [Mapa de Regras](../04_Improve/07_Mapa_de_Regras.md) e [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md).
+
 > Problemas que se repetem nas 3 queries e implicações para o TO-BE.
 > Última atualização: 2026-05-28
 

@@ -1,4 +1,69 @@
-# 🎯 Power BI - Dataset Schema
+# Power BI - Dicionário do Modelo Atual
+
+> **Referência vigente: 2026-10-14.** Conferida contra [NotasFiscais.tmdl](../../../../Dataset/Modelo_Expedicao_ATUAL.SemanticModel/definition/tables/NotasFiscais.tmdl). O esquema proposto de 23 colunas, preservado no anexo, foi substituído. Fonte oficial do PBIP: orquestrador; Dataset é uma cópia.
+
+## Contrato de NotasFiscais
+
+São **39 colunas: 36 importadas de Power Query e três calculadas em DAX**. Tipos são os declarados no TMDL. Não converter NF, delivery ou chave em número. A granularidade pretendida é por CUSTOMER_TRX_ID, mas esse ID não é exposto; NF não é PK garantida. Validação de unicidade/cardinalidade depende de dados homologados.
+
+| Campo | Tipo TMDL | Origem/regra e uso |
+|---|---|---|
+| ORDEM_CLASSIFICACAO | int64 | Índice M após sort, iniciado em 1; não é prefixo textual nem ID persistente |
+| NF | string | AR TRX_NUMBER; identificação da nota |
+| TRX_DATE | dateTime | Data da transação AR |
+| PARTY_NAME | string | HZ_PARTIES.PARTY_NAME, sem corte para 20 caracteres |
+| TRANSP | string | Cabeçalho AR SHIP_VIA |
+| UF | string | HZ_LOCATIONS.STATE via endereço ship-to |
+| DELIVERY | string | AR CT_REFERENCE |
+| VOL | string | WSH GLOBAL_ATTRIBUTE3; filha recebe 0 |
+| SUB_LOC | string | Óleo/item, GA19 ou locator, mais prioridade |
+| LOC_ALL | string | Locators distintos concatenados com ` \| `; diagnóstico |
+| SUBINV_ALL | string | Subinventários distintos; diagnóstico |
+| REL_ALL | string | Status WSH distintos; diagnóstico |
+| QTD_PEDIDA | double | Soma QUANTITY_ORDERED das linhas AR LINE |
+| QTD_ENVIADA | double | Soma SHIPPED_QUANTITY das linhas OE relacionadas |
+| QUANTITY | double | Soma QUANTITY_INVOICED de LINE; não confundir com volume |
+| EXTENDED_AMOUNT | double | Soma EXTENDED_AMOUNT de LINE; não é o imposto usado em PAGA_GUIA |
+| CHAVE_ACESSO | string | CLL ATTRIBUTE2, valor bruto |
+| CHAVE_LEN | int64 | Comprimento bruto da chave, nulo tratado como vazio |
+| STATUS_FISCAL | string | FINALIZADO, CANCELADO, SEM_STATUS ou ERRO |
+| APTA | string | Sim/Nao: FINALIZADO + RILA OK + CHAVE_LEN 44 |
+| CASE_RILA | string | OK/VERF_RILA: igualdade exata de pedido e embarcado, ambos não nulos |
+| PAGA_GUIA | string | SIM/NAO por UF e ICMS-ST |
+| GUIA | string | PAGA GUIA/NÃO PAGA, rótulo de apresentação |
+| MOTIVO | string | OK, CHAVE INVALIDA, ERRO NF, VERIFICAR DELIVERY, ERRO DELIVERY + ERRO NF |
+| PASTA_DESTINO | string | AGUARDANDO GUIA, OLEO, PRONTO ou EXCECAO/*; guia tem precedência |
+| NOME_ARQUIVO | string | Nome sugerido do PDF com letra/posição ou DFE/chave |
+| MULTI_LOCATOR | string | Sim/Nao por quantidade de locators distintos |
+| LOCATOR_PRINCIPAL | string | Locator selecionado pela agregação WSH |
+| CFOP | string | RA_CUST_TRX_TYPES_ALL.GLOBAL_ATTRIBUTE3 |
+| CFOP_ST | string | S_ST/C_ST por ICMS-ST zero/não zero |
+| CFOP_COMPLETO | string | CFOP + espaço + CFOP_ST |
+| ICMS_ST | double | Soma TAX por lookup; ausência convertida em zero |
+| FCP_ST | double | Soma TAX por dez IDs fixos; pode permanecer nulo |
+| CNPJ | string | Dígitos de HZ_PARTIES.JGZZ_FISCAL_CODE; não garante CNPJ de 14 dígitos |
+| NOTA_MAE | string | Referência à menor NF numérica da delivery para filhas; mãe/isolada recebe nulo |
+| DATA_HORA_FAT | dateTime | CREATION_DATE interpretada em UTC-5 e convertida a UTC-3; validar premissa |
+| DL_CMD | Calculada DAX | Texto constante *DN |
+| CHAVE_44 | Calculada DAX | Trim e remoção de DFE inicial; não valida dígitos/DV |
+| STATUS_CICLO | Calculada DAX | SEM CHAVE / JA PROCESSADA / PENDENTE; histórico importado |
+
+O código não garante que 44 caracteres sejam 44 dígitos fiscais válidos. CHAVE_44 e CHAVE_LEN usam bases diferentes. Chaves devem ser conciliadas com documentos e origem autorizada.
+
+## Tabelas auxiliares e medidas
+
+`NFS_IMPRESSAS`: histórico SharePoint, 42 colunas incluindo metadados. `Atualizacao`: texto de refresh UTC-3. `MesmaNF_OutroLocator`: nove colunas e partição vazia; a página de múltiplos locators usa NotasFiscais. São 24 tabelas não automáticas, oito tabelas locais de data e um template.
+
+As 12 medidas e a linhagem completa estão no [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md). Qtd Excecoes conta APTA Nao, podendo sobrepor o cartão de guia. ChavesParaCopiar não exclui histórico nem deduplica por si só.
+
+## Contrato com automações
+
+O modelo calcula NOME_ARQUIVO e PASTA_DESTINO; não movimenta arquivos. Confirmar no export de cada fluxo campos consultados, filtros, normalização, biblioteca, subpastas, histórico, concorrência e limites. O JSON dos botões não comprova que o filtro da tela restrinja a execução.
+
+Campos antigos como INVOICE_TYPE, STATE, MOTIVO_BLOQUEIO, DI_NUMERO, ICMS_RATE e IPI_VALUE não são colunas finais deste modelo. Consumidores devem usar os nomes reais e testar qualquer mudança de contrato.
+
+<details>
+<summary>Esquema proposto em junho/2026: histórico, não implementar como contrato atual</summary>
 
 > As **23 colunas** que seu dataset Power BI deve ter.  
 > **Última atualização:** 2026-06-22
@@ -172,5 +237,7 @@ AND PAGA_GUIA = 'NÃO'
 
 ## 🔗 Referência
 
-- Dados de exemplo: [`referencias/exemplos/Exemplo_Notas_Fiscais.xlsb`](../../referencias/exemplos/Exemplo_Notas_Fiscais.xlsb)
+- Dados de exemplo históricos: Exemplo_Notas_Fiscais.xlsb não está disponível nesta cópia. Não usar notas reais sem autorização/anonimização.
 - Regras de negócio: [`01_Define/04_Regras_Negocio.md`](../../01_Define/04_Regras_Negocio.md)
+
+</details>

@@ -1,5 +1,17 @@
 # Dashboard de Gestão
 
+> **Referência atual: 2026-10-14.** Esta seção descreve as medidas existentes; o desenho antigo abaixo é proposta, não dashboard adicional implantado.
+
+## Leitura da Visão Geral
+
+Total do Ciclo conta linhas no contexto de filtro. Prontos/Oleo/Paga Guia usam PASTA_DESTINO. Exceções conta APTA Nao, podendo incluir notas com guia. Os quatro cartões não são grupos disjuntos; a soma pode ultrapassar o total. Conferir período de DATA_HORA_FAT e filtros antes de interpretar.
+
+MOTIVO/Monitor orientam investigação. Indicadores de prisma são heurísticos e não validam localização física. Histórico é importado; JA PROCESSADA não prova impressão física. Chaves para Download não exclui histórico por si só.
+
+Tempos, backlog por idade, alertas e redução de retrabalho não são métricas implementadas comprovadas pela cópia. Medir conforme [Coleta](../02_Measure/03_Coleta_de_Dados.md). Ações por destino estão no [Manual do Operador](05_Manual_Operador.md); definições DAX no [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md).
+
+## Desenho histórico de indicadores futuros
+
 > Cards e visões da aba "Gestão" no Power BI, consumindo os Lists de auditoria.
 > Última atualização: 2026-05-28
 

@@ -1,5 +1,9 @@
 # Fase 05 — Control
 
+> **Índice revisado: 2026-10-14.** Controle atual combina conferência por chave, liberação fiscal, histórico, impressão e suporte. Planos antigos abaixo não são SLAs ou controles automaticamente implantados.
+
+Começar por [Manual do Operador](05_Manual_Operador.md), [Plano de Controle](01_Plano_de_Controle.md), [Dashboard](02_Dashboard_Gestao.md) e [Auditoria](04_Auditoria_Lite.md). Limiares/contatos: [a confirmar](../03_Analyze/07_Open_Questions.md). Operação deve ser homologada com Expedição, Fiscal e TI.
+
 Esta fase define como sustentar o ganho pós-implantação: KPIs monitorados, alertas, manual do operador e trilhas de auditoria.
 
 ## Documentos desta fase

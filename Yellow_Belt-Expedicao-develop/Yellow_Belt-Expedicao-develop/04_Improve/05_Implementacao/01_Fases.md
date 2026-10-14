@@ -1,5 +1,9 @@
 # 📅 Fases — Roadmap 4 Semanas
 
+> **Revisão: 2026-10-14.** Roadmap histórico estimado; datas, esforço e conclusão não foram reconfirmados. Não reiniciar a ferramenta existente como se estivesse sem implementação.
+
+Etapa atual de entrega: reconciliar documentação, obter exports/configurações, homologar regras/filtros/impressão, fechar controles e transferir a TI. Cronograma e responsáveis nominais: a confirmar. Consultar [Handoff](HANDOFF.md) e [Checklist vigente](02_Checklist.md).
+
 > Detalhamento semana-a-semana da implementação.  
 > **Último update:** 2026-06-22
 

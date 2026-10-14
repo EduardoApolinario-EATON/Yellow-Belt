@@ -1,5 +1,15 @@
 # Coleta de Dados
 
+> **Revisão documental: 2026-10-14.** Plano de coleta, não evidência de execução. Amostra, datas, responsáveis e aprovação: a confirmar.
+
+## Medição necessária para o aceite atual
+
+Registrar por rodada: ambiente/versão, operador, período de faturamento, chaves esperadas, PDFs presentes, notas aptas/com guia/não aptas, erros, início/fim de refresh, processamento, conferência e impressão; tempo humano e espera separados. Registrar falha parcial e reimpressão autorizada. Não usar apenas quantidade de arquivos nem somar cartões sobrepostos para conciliar.
+
+Comparar AS-IS e TO-BE com escopo equivalente e mix/volume explícitos. Registrar perdas e casos excluídos. DataImpressao no SharePoint e timestamp do modelo não substituem medição da impressão física ou do término dos dataflows.
+
+Guardar evidências fiscais em canal restrito. Validar [P17](../03_Analyze/07_Open_Questions.md) antes de divulgar ganhos. O plano original abaixo é referência de desenho da coleta.
+
 > Plano de coleta de 5 ciclos para validar a linha de base do AS-IS.
 > Última atualização: 2026-05-28
 

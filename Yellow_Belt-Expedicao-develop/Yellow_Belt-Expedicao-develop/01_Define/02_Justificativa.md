@@ -1,5 +1,9 @@
 # Justificativa do Projeto
 
+> **Revisão documental: 2026-10-14.** A justificativa abaixo registra o problema original. Ganhos e redução de risco não são resultados comprovados pela revisão do PBIP.
+
+A ferramenta funcional apoia classificação e ordem; conferência, liberação fiscal e impressão permanecem humanas. Medir resultados conforme [Measure](../02_Measure/README.md) e validar a rotina pelas [pendências atuais](../03_Analyze/07_Open_Questions.md).
+
 > Motivação curta para o Project Charter.
 > Última atualização: 2026-05-28
 

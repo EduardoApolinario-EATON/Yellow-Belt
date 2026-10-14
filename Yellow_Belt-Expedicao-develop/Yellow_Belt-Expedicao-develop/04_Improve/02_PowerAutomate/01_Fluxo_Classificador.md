@@ -1,5 +1,15 @@
 # 🔄 Fluxo Classificador — Power Automate
 
+> **Revisão: 2026-10-14.** Roteiro histórico/proposto, não export do fluxo funcional. O responsável confirmou que PROCESSAR PDFs classifica arquivos em SharePoint conforme Lista de Impressão; passos internos não foram auditados.
+
+## Contrato a verificar no fluxo existente
+
+Identificar trigger, consulta ao modelo, filtros, chave de match, normalização, biblioteca/origem, regras de nome/destino, histórico, concorrência, retries e compensação em falha parcial. O modelo fornece NOME_ARQUIVO e PASTA_DESTINO, mas não prova que o fluxo use esses campos sem transformação. Filtros da tela não garantem filtro da consulta do fluxo.
+
+STATUS_CICLO é importado/recalculado: JA PROCESSADA não é comprovação de impressão física. Testar leitura do histórico ao vivo e idempotência separadamente. Não presumir limpeza automática da entrada, estrutura SAIDA/ciclo nem liberação da guia. Ver [Handoff](../05_Implementacao/HANDOFF.md) e [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md).
+
+## Roteiro histórico - não executar como deploy atual
+
 > Steps detalhados do fluxo que classifica PDFs automaticamente.  
 > **Último update:** 2026-06-22
 

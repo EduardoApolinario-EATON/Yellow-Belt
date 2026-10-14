@@ -1,4 +1,25 @@
-# 📋 Regras de Negócio — Classificação de NFs
+# Regras de Negócio - Classificação de NFs
+
+> **Referência vigente: 2026-10-14.** O resumo a seguir descreve o modelo atual. As regras extraídas da macro permanecem no anexo histórico e não comprovam paridade ou aprovação fiscal.
+
+## Regras atuais para Expedição e Fiscal
+
+| Tema | Regra | Cuidado operacional |
+|---|---|---|
+| Aptidão | Fiscal FINALIZADO, quantidades iguais/não nulas e chave com comprimento 44 | Não comprova guia paga, PDF disponível ou prisma válido |
+| Guia | AC/AM/AP/RO/RR; AL/DF/GO/MS/TO quando ICMS-ST não zero | Não usar valor de produtos EXTENDED_AMOUNT como imposto |
+| Prisma | Óleo/item, GA19 ou locator, mais prioridade | Conferir localização com Armazém; formatos variam |
+| Mãe/filha | Menor NF numérica da delivery é mãe; filhas referenciam essa NF | Campo vazio também pode ser nota isolada; volume filha 0 |
+| Ordem | Guia, prisma de ordenação da mãe, delivery, NF; índice em M | Pode mudar no refresh; não renumera com filtro |
+| Destino | Guia precede aptidão; depois óleo apto, pronto apto e exceções | AGUARDANDO GUIA pode conter nota não apta |
+| Histórico | SEM CHAVE, JA PROCESSADA ou PENDENTE por lista importada | Não confundir processamento com impressão ou liberação |
+
+O responsável confirmou Power BI, atualização do modelo, processamento de PDFs em SharePoint e paga guias. Fluxos detalhados, retorno da guia, contatos e homologação: a confirmar. Nenhuma nota deve ser liberada apenas pelo nome de uma pasta ou botão.
+
+As regras completas, divergências do legado e limites estão no [Mapa de Regras](../04_Improve/07_Mapa_de_Regras.md) e no [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md). Mudanças de regra fiscal exigem aprovação do Fiscal; mudanças de separação/ordem exigem Expedição; TI valida implementação e controles.
+
+<details>
+<summary>Regras extraídas da macro em junho/2026: histórico, não procedimento vigente</summary>
 
 > Lógica extraída da macro VBA legada (7 módulos).  
 > **Última atualização:** 2026-06-22
@@ -164,3 +185,5 @@ Esses conceitos devem ser refletidos em:
 ## 🔗 Referência
 
 Análise completa em [`referencias/macro_antiga/README.md`](../referencias/macro_antiga/README.md)
+
+</details>

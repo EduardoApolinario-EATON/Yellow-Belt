@@ -1,5 +1,9 @@
 # Git Workflow Empresarial — Guia Prático
 
+> **Contexto do projeto revisado: 2026-10-14.** O guia abaixo é referência geral, não estado confirmado de proteções, revisores ou pipeline. Nomes/exemplos e comandos devem ser adaptados ao processo corporativo autorizado.
+
+O PBIP oficial permanece no orquestrador; não criar fonte concorrente em Dataset. Não commitar dados fiscais/caches/segredos nem publicar em PROD sem aceite. Para a ferramenta, seguir [Handoff vigente](../04_Improve/05_Implementacao/HANDOFF.md); branches, políticas e proprietários devem ser confirmados com TI.
+
 > Fluxo colaborativo com controle de branch, approvals e release management.
 > Para aplicar no repositório corporativo da empresa.
 > Última atualização: 2026-05-28

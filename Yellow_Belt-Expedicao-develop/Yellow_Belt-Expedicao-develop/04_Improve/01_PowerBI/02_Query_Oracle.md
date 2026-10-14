@@ -1,5 +1,9 @@
 # 🗄️ Lógica das Queries → Dataflow + Dataset
 
+> **Revisão: 2026-10-14.** O texto original descreve uma proposta de migração. A cópia atual não executa as queries SQL diretamente: consome múltiplos Bronze e calcula joins/agregações em M.
+
+Referência atual: [linhagem e pipeline](../../docs_ferramenta/01_Documentacao_Tecnica.md) e [diferenças de regras](../07_Mapa_de_Regras.md). Não há filtro local geral de hoje/canceladas em NotasFiscais; WSH usa WSH_DOC e corte local de 45 dias. Janelas, gateway e SQL upstream devem ser verificados no orquestrador com o dono do dataflow.
+
 > Como a lógica das 3 queries Oracle é replicada no **dataflow de ingestão** (tabelas-base) e no **dataset** (M/DAX). As queries servem de **especificação versionada** — não são executadas como query monolítica/native query.  
 > **Último update:** 2026-06-23
 

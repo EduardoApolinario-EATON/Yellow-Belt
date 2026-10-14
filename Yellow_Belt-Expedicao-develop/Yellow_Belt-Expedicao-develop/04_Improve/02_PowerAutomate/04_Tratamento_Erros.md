@@ -1,5 +1,13 @@
 # 🚨 Tratamento de Erros
 
+> **Revisão: 2026-10-14.** Tratamentos abaixo são propostas; não há export comprovando ações, estados, logs ou notificações existentes.
+
+## Orientação vigente em incidente
+
+Suspender novos disparos em falha parcial; registrar ID de execução, horário, versão, filtros, erro e relação restrita de arquivos/chaves. Reconciliar origem, destino e lista antes de retry. Não apagar histórico nem repetir todo o lote como solução automática. Responsáveis e SLA: a confirmar.
+
+Distinguir erro de execução do fluxo de MOTIVO calculado no modelo. CHAVE INVALIDA no modelo não prova PDF ilegível. JA PROCESSADA só indica chave no histórico importado; não presumir estados JA_IMPRESSO no fluxo. Ver [runbook técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md) e [manual operacional](../../05_Control/05_Manual_Operador.md).
+
 > O que fazer quando algo dá errado no fluxo.  
 > **Último update:** 2026-06-22
 

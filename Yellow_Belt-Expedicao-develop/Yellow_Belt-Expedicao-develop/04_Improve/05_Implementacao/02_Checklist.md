@@ -1,5 +1,26 @@
 # ✅ Checklist — Pré-Go-Live
 
+> **Checklist vigente: 2026-10-14.** Os itens abaixo estão pendentes de comprovação, não marcados como concluídos apenas por presença de código. O checklist antigo permanece como histórico.
+
+## Evidências para liberar rotina e transferir TI
+
+- [ ] P01/P02: ambiente, links e caminhos preenchidos; acesso da Expedição e do suporte testado.
+- [ ] P03/P04: exports e donos dos fluxos; mapeamento dos botões; universo da consulta comparado ao filtro visual.
+- [ ] P05/P09: Fiscal aprova guia/retorno, aptidão e nota não apta em AGUARDANDO GUIA; Armazém aprova prisma/delivery/mãe-filha.
+- [ ] P06/P07: duplo clique, retries e falha parcial testados; histórico reconciliado; processado distinguido de impresso.
+- [ ] P08/P18: impressão, reimpressão autorizada, download e eventual rotina de etiquetas acompanhados.
+- [ ] P10/P19: titular/substituto, contatos, escalonamento e SLAs aprovados.
+- [ ] P11/P12/P14: refresh, janelas, fuso, gateway/conexões, permissões, licenças e DLP documentados.
+- [ ] P13: limitações de CNPJ, chave e impostos aceitas ou corrigidas no oficial.
+- [ ] P15/P16: backup/rollback, recuperação de efeitos externos e retenção testados/aprovados.
+- [ ] P17: baseline e medição aprovados; projeção e ganho realizado separados.
+- [ ] Versão/commit do oficial corresponde à documentação; teste em DEV e aceite registrado antes de promoção.
+- [ ] Manuais revisados por Expedição/Fiscal/TI; treinamento concluído; PDFs antigos não incluídos como versão atual.
+
+Para cada item registrar ambiente, versão, entrada/resultado, evidência restrita, aprovador e data. Detalhes de [P01-P19](../../03_Analyze/07_Open_Questions.md), [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md) e [Handoff](HANDOFF.md).
+
+## Checklist histórico - não representa aceite atual
+
 > Validação final antes do primeiro ciclo em produção.  
 > **Último update:** 2026-06-22
 

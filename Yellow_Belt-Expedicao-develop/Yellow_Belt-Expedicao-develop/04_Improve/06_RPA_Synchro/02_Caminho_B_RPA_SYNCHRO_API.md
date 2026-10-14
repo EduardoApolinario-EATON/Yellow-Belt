@@ -1,5 +1,9 @@
 # ⏳ Caminho B: RPA + SYNCHRO API (Investigação)
 
+> **Revisão: 2026-10-14.** Investigação futura, não implementação. Endpoints, respostas, licenças, contas e tempos ilustrativos abaixo não foram validados com o fornecedor/tenant.
+
+Antes de automatizar, obter aprovação de TI/Compliance, acesso seguro, contrato de documentos/chaves e rotina de recuperação. Não inserir segredos em scripts ou chamadas públicas. O fluxo de classificação existente não comprova download automático. Ver [escopo e pendências](../../03_Analyze/07_Open_Questions.md).
+
 > Especificação técnica da automatização futura via API SYNCHRO.  
 > **Status:** Investigação paralela (após Go-live Opção A).  
 > **Último update:** 2026-06-22

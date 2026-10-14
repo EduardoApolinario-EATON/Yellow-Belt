@@ -1,5 +1,9 @@
 # 📚 Integração — Overview
 
+> **Índice revisado: 2026-10-14.** Integração funcional confirmada com SharePoint; caminhos, retenção e estrutura física a confirmar. Os roteiros de criação abaixo não comprovam a estrutura existente.
+
+Rotina vigente: [Manual do Operador](../../05_Control/05_Manual_Operador.md). Configuração e transferência: [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md) e [P02/P16](../../03_Analyze/07_Open_Questions.md). Não executar setup_sharepoint.ps1 para “alinhar” documentação; revisar previamente com TI em ambiente autorizado.
+
 > Como tudo se conecta: PDFs, Power BI, Power Automate, SharePoint.  
 > **Último update:** 2026-06-22
 

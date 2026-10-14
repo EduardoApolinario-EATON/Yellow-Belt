@@ -1,5 +1,9 @@
 # 📥 RPA / Synchro — Os Dois Caminhos
 
+> **Índice revisado: 2026-10-14.** Estudos de obtenção de PDFs; funcionamento confirmado refere-se à classificação em SharePoint, não ao download via API/RPA. Procedimento atual de download: a confirmar.
+
+Não tratar endpoint, licença ou RPA como disponíveis. Futuras integrações exigem TI/Compliance, segurança, contrato de chave/arquivo e testes; não são escopo desta revisão. Usar [Manual do Operador](../../05_Control/05_Manual_Operador.md) e [P18](../../03_Analyze/07_Open_Questions.md).
+
 > Estratégia dual para ingesta de PDFs: imediato (Opção A) vs. futuro (Opção B).  
 > **Último update:** 2026-06-22
 

@@ -1,5 +1,13 @@
 # Indicadores
 
+> **Revisão documental: 2026-10-14.** Os indicadores abaixo foram propostos para melhoria; disponibilidade no relatório atual deve ser distinguida de meta ou medição futura.
+
+## Indicadores comprovados no modelo
+
+Total do Ciclo conta linhas no contexto filtrado; Qtd Prontos/Oleo/Paga Guia usam PASTA_DESTINO; Qtd Excecoes usa APTA Nao. Guia e exceções podem sobrepor: não somar os cartões para obter total. ChavesParaCopiar/QtdChaves usam aptas de comprimento 44, sem deduplicação ou exclusão do histórico por si só.
+
+Tempo de ciclo, produtividade, erros físicos, SLA e ganhos não são medidas implementadas comprovadas nesta cópia. Usar [coleta](03_Coleta_de_Dados.md) e [dashboard de gestão](../05_Control/02_Dashboard_Gestao.md); limiares e metas precisam de aprovação.
+
 > KPIs do projeto Yellow Belt. Define o que medir antes, durante e depois da implementação.
 > Última atualização: 2026-05-28
 

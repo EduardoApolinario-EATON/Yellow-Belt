@@ -1,5 +1,9 @@
 # 🎯 Algoritmo de Matching — CHAVE_ACESSO
 
+> **Revisão: 2026-10-14.** Algoritmo proposto, não comprovado no export atual. Não assumir OCR/leitura de conteúdo: origem da chave e padrão dos PDFs devem ser confirmados no fluxo.
+
+No modelo CHAVE_ACESSO é bruta; CHAVE_LEN mede comprimento bruto; CHAVE_44 faz trim/remove DFE; nenhuma garante dígitos/DV. Conciliar por chave autorizada, detectar ambiguidades/duplicados e testar chave ausente, prefixada ou fora do universo. Licenciamento e compliance de serviços externos exigem aprovação. Ver [contrato atual](../01_PowerBI/01_Dataset_Schema.md) e [P02-P04/P13](../../03_Analyze/07_Open_Questions.md).
+
 > Como extrair a CHAVE_ACESSO de cada PDF e fazer match com o dataset.  
 > **Último update:** 2026-06-22
 

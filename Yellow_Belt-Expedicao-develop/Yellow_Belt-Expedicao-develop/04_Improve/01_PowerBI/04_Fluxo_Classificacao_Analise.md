@@ -1,5 +1,9 @@
 # 📋 Fluxo de Classificação — Análise das Queries + Macro
 
+> **Revisão: 2026-10-14.** A matriz abaixo é análise histórica. O modelo atual já calcula APTA, MOTIVO, PASTA_DESTINO e NOME_ARQUIVO em M, com regras descritas no [Mapa vigente](../07_Mapa_de_Regras.md).
+
+Precedência atual: guia SIM antes da aptidão; depois óleo apto, pronto apto e exceções. MOTIVO prioriza chave de comprimento inválido antes da matriz fiscal/delivery. AGUARDANDO GUIA pode conter não apta. Não reaplicar a matriz antiga no fluxo sem confirmar o contrato e homologar a divergência. Pastas físicas, filtros e liberação: a confirmar no export/negócio.
+
 > O que as queries e macro realmente fazem (sem suposições).  
 > **Baseado em:** Query 2 (AFT) + Macro VBA (7 módulos)  
 > **Último update:** 2026-06-22

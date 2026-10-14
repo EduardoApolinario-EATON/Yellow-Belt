@@ -1,5 +1,9 @@
 # Git Workflow para Power BI / Análise de Dados
 
+> **Contexto do projeto revisado: 2026-10-14.** Exemplos gerais do guia não comprovam CI/Fabric Git Integration ou pipeline de deploy ativos. Não executar migração/publicação apenas por seguir este texto.
+
+Dataset é cópia atual para documentação; o modelo oficial está em mobility-powerbi-architecture/reports/EXPEDICAO_AFT/. Desktop/publicação exigem Windows compatível e acessos corporativos. Validar conexões, WorkspaceId, rebind, fluxos e efeitos externos no [runbook técnico](../docs_ferramenta/01_Documentacao_Tecnica.md). Caches/configurações locais e dados fiscais não devem ser versionados; retenção de dados não se resolve com Git.
+
 > Fluxo colaborativo simples e rápido para dataflows, modelos semânticos e reports.
 > Para aplicar no repositório corporativo de BI/Analytics.
 > Última atualização: 2026-05-28

@@ -1,5 +1,9 @@
 # 📌 Plano de Ação — 5W2H
 
+> **Revisão: 2026-10-14.** Plano original com prazos/custos/responsáveis ainda não reconfirmados. A ferramenta já tem modelo e três ações funcionais; não marcar tarefas como concluídas sem evidência.
+
+Plano atual: obter dados operacionais/exports, homologar regras/filtros/duplicidade/impressão, definir suporte/retorno e aprovar transferência. Responsáveis nominais e datas a confirmar. Usar [P01-P19](../03_Analyze/07_Open_Questions.md) e [Checklist vigente](05_Implementacao/02_Checklist.md) como lista de fechamento.
+
 > Ações concretas para levar a solução à produção.  
 > **Última atualização:** 2026-06-22
 

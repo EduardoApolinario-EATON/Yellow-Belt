@@ -1,5 +1,17 @@
 # Escopo e Premissas
 
+> **Revisão documental: 2026-10-14.** As premissas originais abaixo não constituem aprovação de implantação ou licença.
+
+## Escopo vigente da ferramenta documentada
+
+Power BI Import, relatório de sete páginas e ações funcionais de atualizar modelo, paga guias e processar PDFs em SharePoint. O modelo oficial permanece no orquestrador; Dataset é cópia atual. Download SYNCHRO/etiquetas, retorno de guia, caminhos, contatos, ambiente, cadência e SLA precisam de confirmação.
+
+Fora desta revisão: implementar RPA/API/OCR, alterar regras fiscais, publicar em produção, migrar proprietários ou regenerar PDFs. Power Automate Free/Pro, limites de refresh e disponibilidade de conectores devem ser validados no tenant. Não presumir dataflow dedicado, impressão automática ou homologação integral.
+
+Ver [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md) e [P01-P19](../03_Analyze/07_Open_Questions.md).
+
+## Premissas históricas
+
 > Detalha o que está dentro e fora do escopo da Fase 1, restrições firmes e premissas técnicas/operacionais.
 > Última atualização: 2026-05-28
 

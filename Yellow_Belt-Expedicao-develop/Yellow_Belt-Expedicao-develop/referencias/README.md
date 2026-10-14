@@ -1,5 +1,9 @@
 # referencias/ — Materiais de referência
 
+> **Revisão documental: 2026-10-14.** Referências do legado e evidências locais, não contrato atual nem homologação da cópia PBIP. Não presumir que materiais ausentes ou relatos antigos comprovem paridade atual.
+
+Contrato vigente: [Mapa de Regras](../04_Improve/07_Mapa_de_Regras.md), [Dicionário](../04_Improve/01_PowerBI/01_Dataset_Schema.md) e [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md). Dados fiscais, planilhas e PDFs reais devem permanecer em canal autorizado; não extrair/publicar conteúdo sensível. Evidências de homologação precisam identificar ambiente, versão, amostra e aprovador.
+
 > Documentos e artefatos do estado AS-IS preservados para consulta.
 > Última atualização: 2026-05-28
 

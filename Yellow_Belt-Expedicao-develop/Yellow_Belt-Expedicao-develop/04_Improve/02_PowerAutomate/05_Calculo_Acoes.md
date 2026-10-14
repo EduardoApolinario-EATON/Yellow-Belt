@@ -1,5 +1,9 @@
 # 💰 Cálculo de Ações — Power Automate Cloud Free
 
+> **Revisão: 2026-10-14.** Estimativa histórica, não garantia de direitos de uso, cota ou capacidade. Números de volume/cadência não foram reconfirmados; o tenant/licenças devem ser auditados por TI.
+
+Recalcular pelo export e histórico de execução atuais: ações por arquivo, chamadas/consulta, loops, retries, concorrência, paginação, limites de conectores e refresh. Não declarar que Free atende apenas pela contagem estimada. Validar [P12/P17](../../03_Analyze/07_Open_Questions.md) antes de dimensionar ou licenciar.
+
 > Análise de custo em ações/dia e viabilidade do plano Cloud Free.  
 > **Último update:** 2026-06-22
 

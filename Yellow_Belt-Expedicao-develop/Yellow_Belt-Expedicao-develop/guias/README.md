@@ -1,5 +1,9 @@
 # guias/ — Git Workflow para Power BI / Analytics
 
+> **Revisão documental: 2026-10-14.** Guias gerais e exemplos, não comprovação de CI, Git Integration, branches protegidas ou deploy configurados para esta ferramenta. Templates são recursos de apoio; instalação/ativação não foi alterada nesta revisão.
+
+Para Power BI, manter uma única fonte oficial no orquestrador; Dataset é cópia de referência. Não publicar mudanças da cópia em paralelo. Alterações de documentação ficam neste repositório; nenhuma branch/commit/publicação foi realizada nesta revisão. Governança específica e transferência: [Handoff](../04_Improve/05_Implementacao/HANDOFF.md) e [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md).
+
 > Documentos e templates para trabalho colaborativo no repositório corporativo.
 > Otimizado para ambientes de BI (dataflows, modelos semânticos, reports).
 > Última atualização: 2026-05-28

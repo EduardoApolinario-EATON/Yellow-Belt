@@ -1,5 +1,17 @@
 # 🗂️ Modelo Semântico — Tabelas Base Oracle
 
+> **Atualização: 2026-10-14.** A arquitetura vigente usa múltiplos dataflows Bronze, modelo Import e joins de negócio em M; não um dataflow dedicado nem os relacionamentos de negócio propostos abaixo. O restante deste documento é estudo de junho/2026, não configuração vigente.
+
+## Modelo atual
+
+São 33 tabelas no projeto, incluindo automáticas de data. NotasFiscais tem 39 colunas e 12 medidas; o relatório tem sete páginas. As fontes e os oito relacionamentos automáticos de data estão documentados no [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md); o contrato completo está no [Dicionário](01_Dataset_Schema.md).
+
+Não há RA_INTERFACE_LINES_ALL nem OE_ORDER_HEADERS_ALL na cópia atual. UF usa a cadeia ship-to site use -> account site -> party site -> location. CNPJ usa JGZZ_FISCAL_CODE. Quantidade enviada vem de OE_ORDER_LINES_ALL. Mãe/filha é calculada em M pela menor NF numérica da delivery, não por ISBLANK em DAX.
+
+WSH usa WSH_DOC com corte local de 45 dias e deduplicação. A atualização do modelo não comprova atualização das origens nem snapshot transacional simultâneo. Licenças, capacidade, limites e cadência são a confirmar no tenant, não garantias de Pro/Free. O funcionamento dos três botões foi confirmado; consultas/filtros dos fluxos externos requerem export.
+
+## Estudo histórico - não executar como especificação atual
+
 > Mapeamento das 13 views para tabelas base reais + modelo semântico Power BI.  
 > **Abordagem confirmada:** Ingestão das tabelas base via **dataflows** → modelo semântico (dataset) com relacionamentos e **lógica das queries empurrada para Power Query (M) e DAX** → Power Automate consome o dataset publicado via ação **"Run a query against a dataset"** (DAX `EVALUATE`).  
 > **Último update:** 2026-06-23

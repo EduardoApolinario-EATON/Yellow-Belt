@@ -1,5 +1,9 @@
 # 📦 Exemplo de Fluxo — Um Prisma com 4 Pedidos
 
+> **Revisão: 2026-10-14.** Exemplo ilustrativo de desenho, não estrutura real de pastas nem lote de aceite. Nomes, volumes, sinais de retorno e passos abaixo não comprovam comportamento dos fluxos atuais.
+
+Aplicar contrato real: mãe é menor NF numérica por delivery, guia precede aptidão, SORT_SUBLOC agrupa sem substituir prisma exibido. Caminhos e liberação a confirmar. Referências: [Mapa de Regras](07_Mapa_de_Regras.md) e [Manual do Operador](../05_Control/05_Manual_Operador.md).
+
 > Referência visual de **ponta a ponta**: do momento em que os itens são bipados até os PDFs chegarem na pasta final, **renomeados e classificados**.
 > Baseado nas regras catalogadas em [07_Mapa_de_Regras.md](07_Mapa_de_Regras.md).
 > **Última atualização:** 2026-06-23

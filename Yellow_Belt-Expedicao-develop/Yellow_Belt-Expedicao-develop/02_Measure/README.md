@@ -1,5 +1,9 @@
 # Fase 02 — Measure
 
+> **Índice revisado: 2026-10-14.** Baseline é histórico/qualitativo; coleta e ganhos observados continuam a confirmar. Metas não são resultados. A leitura atual dos cartões está em [Indicadores](04_Indicadores.md).
+
+Ver [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md) para definição DAX e [P17/P19](../03_Analyze/07_Open_Questions.md) para aceite de métricas e SLAs.
+
 Esta fase quantifica o problema. Estabelece a linha de base (AS-IS), mapeia o processo atual em detalhe, define os indicadores e propõe a coleta de dados.
 
 ## Documentos desta fase

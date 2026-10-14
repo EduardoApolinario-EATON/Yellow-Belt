@@ -1,5 +1,9 @@
 # 🏗️ Arquitetura — Decisões Técnicas
 
+> **Índice revisado: 2026-10-14.** Decisão observada: tabelas-base via múltiplos Bronze e joins M; sem acesso direto às views pelo modelo. A opção histórica não comprova todas as permissões/licenças propostas.
+
+WSH atual: WSH_DOC, corte local 45 dias e deduplicação; não orientar ajustes exclusivos em WSH_DOC_CUR. Fonte oficial no orquestrador, Dataset é cópia. Ver [arquitetura e fronteiras atuais](../../docs_ferramenta/01_Documentacao_Tecnica.md) e [pendências de refresh/tenant](../../03_Analyze/07_Open_Questions.md).
+
 > Fundação técnica da solução TO-BE.  
 > **Último update:** 2026-06-23
 

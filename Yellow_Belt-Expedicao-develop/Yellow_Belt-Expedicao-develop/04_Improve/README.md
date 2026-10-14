@@ -1,5 +1,9 @@
 # Fase 04 — Improve
 
+> **Índice revisado: 2026-10-14.** Esta fase contém contratos atuais e propostas históricas. Presença de roteiro, exemplo ou script não comprova implantação.
+
+Contratos vigentes: [Dicionário](01_PowerBI/01_Dataset_Schema.md), [Mapa de Regras](07_Mapa_de_Regras.md), [Handoff](05_Implementacao/HANDOFF.md). Operação: [Manual do Operador](../05_Control/05_Manual_Operador.md). Fonte oficial do PBIP: orquestrador; Dataset é cópia atual. Export dos fluxos e homologação: [a confirmar](../03_Analyze/07_Open_Questions.md).
+
 Esta fase consolida a estratégia TO-BE: arquitetura, queries refatoradas, fluxos Power Automate, organização dos PDFs, compliance.
 
 ## Documentos desta fase

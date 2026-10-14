@@ -1,5 +1,9 @@
 # 🔧 Opção D: Refatoração com Tabelas Base
 
+> **Revisão: 2026-10-14.** Proposta histórica de arquitetura. O modelo atual usa tabelas-base Bronze; não é necessário refazê-lo a partir dos exemplos abaixo.
+
+Diferenças: múltiplos dataflows existentes, joins de negócio M, 39 colunas e relacionamentos automáticos de data. Janelas, gateway, licenças e contexto EBS upstream precisam de verificação com o orquestrador. Não alterar produção nem entidades compartilhadas sem dono. Referência atual: [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md).
+
 > Decisão arquitetural: Por que tabelas base Oracle (não views).  
 > **Último update:** 2026-06-22
 

@@ -1,5 +1,9 @@
 # 🗂️ Armazenamento de PDFs — Opção A vs Investigação Paralela
 
+> **Revisão: 2026-10-14.** Alternativas e nomes de pastas abaixo são planejamento, não caminhos comprovados. SharePoint é usado pelo processamento confirmado; estrutura física de PDFs e retenção continuam a confirmar.
+
+A cópia importa NFS_IMPRESSAS do site Expedio-Valinhos; isso não identifica a biblioteca/pasta de PDFs. Mapear entrada, resultado, exceções, ciclos, normalização de nomes, colisões, acesso, retenção e recuperação no export/configuração real. Limpar pastas não deve ser confundido com apagar memória de processamento. Ver [P02/P16](../../03_Analyze/07_Open_Questions.md).
+
 > Decisão crítica: Como operador salva PDFs para que Power Automate acesse?  
 > **Último update:** 2026-06-22
 

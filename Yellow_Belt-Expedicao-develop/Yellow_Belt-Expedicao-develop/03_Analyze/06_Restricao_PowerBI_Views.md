@@ -1,5 +1,9 @@
 # Restrição Power BI × Views EBS — Avaliação de Opções
 
+> **Revisão documental: 2026-10-14.** Estudo histórico de acesso ao Oracle. A opção observada na cópia usa tabelas-base em dataflows Bronze; não conecta o modelo diretamente às views.
+
+Conexões, gateway, limitações do tenant e permissões upstream precisam ser confirmados com o dono das origens. As opções A/B de obtenção de PDFs são outro eixo, não estas opções de acesso a dados. Ver [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md).
+
 > Por que o Power BI não consome diretamente as views `_BR_V` do Oracle EBS, e como resolver dentro do escopo da Fase 1.
 > Última atualização: 2026-05-28
 

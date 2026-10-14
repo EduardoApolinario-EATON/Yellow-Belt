@@ -1,5 +1,23 @@
 # Plano de Controle
 
+> **Referência atual: 2026-10-14.** Controles de aceitação propostos para a ferramenta funcional; execução, frequência aprovada, nomes e SLAs ainda precisam de confirmação. O plano original permanece histórico.
+
+## Matriz para o supervisor
+
+| Controle | Quando proposto | Evidência | Papel | Desvio |
+|---|---|---|---|---|
+| Universo da rodada | Antes do disparo | Período/filtros e chaves esperadas versus PDFs | Expedição + BI | Suspender se não corresponder |
+| Frescor | Antes do processamento | Refresh concluído de origens/modelo e visuais atualizados | Dados/BI | Não presumir timestamp como confirmação das origens |
+| Aptidão/guia/local | Antes de impressão | APTA, MOTIVO, liberação Fiscal e conferência de prisma | Fiscal + Armazém | Segregar nota com pendência |
+| Resultado do fluxo | Após cada execução | Chave -> arquivo/destino/histórico/erro | Automação + Expedição | Reconciliar falha parcial antes de retry |
+| Impressão física | Ao fechar lote | Sequência e lote conferidos pelo operador | Expedição | Reimpressão somente autorizada |
+| Acesso/continuidade | Após mudança e periodicidade a definir | Donos/substitutos, conexões, backup e recuperação | TI | Não operar sem responsável ou acesso necessário |
+| Métrica/ganho | Período de coleta aprovado | Tempos reais, volume/mix, baseline comparável | Yellow Belt + supervisor | Não divulgar projeção como resultado |
+
+Não somar cartões de guia/exceção; conciliar conjuntos por chave. Não apagar histórico para limpar desvio. Formalizar frequência, limites e contatos nas [P01-P19](../03_Analyze/07_Open_Questions.md); usar [Manual do Operador](05_Manual_Operador.md) e [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md).
+
+## Plano histórico
+
 > KPIs monitorados, meta, frequência, fonte e responsável.
 > Última atualização: 2026-05-28
 

@@ -1,5 +1,19 @@
 # Relatório da Solução — Entrega em 3 Estágios (Expedição AFT)
 
+> **Status vigente: 2026-10-14.** O relatório de agosto abaixo é histórico. Percentuais de paridade, lote de 224 e validação DEV são relatos anteriores, não reproduzidos nem reconfirmados nesta revisão.
+
+| Estágio | Evidência atual | Pendência |
+|---|---|---|
+| BI | PBIP/TMDL/JSON atuais; funcionamento confirmado | Ambiente, paridade com dados e aceite |
+| Obtenção de PDFs | Não comprovada por esta cópia | Procedimento SYNCHRO; API/RPA não confirmados |
+| Automação | Atualizar modelo, Paga Guia e PROCESSAR PDFs funcionais conforme responsável | Exports, filtros, caminhos, histórico, concorrência e suporte |
+
+O relatório tem sete páginas, incluindo DL Etiquetas e Mesma NF em Outro Locator. STATUS_CICLO usa JA PROCESSADA, não JA_IMPRESSO; WSH usa WSH_DOC e janela local 45 dias. Não garantir ordem física ou ganho realizado apenas pelo nome de arquivo. Fonte oficial continua no orquestrador.
+
+Ver [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md), [Mapa atual](07_Mapa_de_Regras.md) e [P01-P19](../03_Analyze/07_Open_Questions.md).
+
+## Relatório histórico de agosto/2026
+
 > Relatório de arquitetura e status da automação da Expedição AFT (Eaton Valinhos),
 > organizado em **3 estágios de entrega**.
 > **Última atualização:** 2026-08-18

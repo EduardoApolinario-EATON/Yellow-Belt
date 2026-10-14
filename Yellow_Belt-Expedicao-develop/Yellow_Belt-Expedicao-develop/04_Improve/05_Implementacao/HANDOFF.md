@@ -1,5 +1,53 @@
 # HANDOFF — Projeto Expedição AFT (Modelo_Expedicao)
 
+> **Handoff vigente: 2026-10-14.** Público: TI/BI/Automação que assumirá a ferramenta. A nota de sessão de julho permanece apenas como histórico no anexo.
+
+## O que assumir
+
+Modelo Import e relatório de sete páginas; automações de atualizar modelo, classificar PDFs e paga guias confirmadas pelo responsável. O modelo oficial permanece em `mobility-powerbi-architecture/reports/EXPEDICAO_AFT/`; [Dataset](../../../../Dataset/Modelo_Expedicao.pbip) é cópia de referência atual, não segunda fonte oficial.
+
+## Pacote obrigatório de transferência
+
+| Entrega | Situação |
+|---|---|
+| PBIP/TMDL/JSON da cópia e documentação dos campos/regras | Disponível neste repositório |
+| Commit/versão correspondente no oficial | A confirmar |
+| Ambiente operativo e links do Service | A confirmar |
+| Export dos três fluxos funcionais; segregação do botão de teste | A confirmar |
+| Donos, co-donos, contas de conexão e substitutos | A confirmar |
+| Configuração de origem/destino dos PDFs e lista de histórico | Histórico identificado na cópia; caminhos dos PDFs a confirmar |
+| Refresh/dataflows, gateway, parâmetros upstream e limites | Dependências identificadas; configuração operacional a confirmar |
+| Licenças, permissões, DLP e retenção | A confirmar no tenant |
+| Aceite de Expedição/Fiscal/TI, suporte e recuperação | A confirmar |
+
+Não anexar senhas, tokens, PDFs fiscais ou dados reais ao repositório. Registrar referências de evidências em canal corporativo restrito.
+
+## Primeira manutenção
+
+1. Ler [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md), [Dicionário](../01_PowerBI/01_Dataset_Schema.md) e [Pendências P01-P19](../../03_Analyze/07_Open_Questions.md).
+2. Obter acesso ao oficial, DEV, origens e histórico de refresh/execução; comparar versão antes de editar.
+3. Mapear botões: ATUALIZAR DATASET, PROCESSAR PDFs, Paga Guia e PAGA GUIA [TESTE]. Confirmar ação, consulta, filtros e conexões no export, não apenas no relatório.
+4. Executar lote autorizado em DEV; reconciliar chave -> linha -> PDF -> destino -> histórico -> impressão física.
+5. Registrar diferenças aceitas do legado; alterar somente o oficial com testes, aprovadores e plano de retorno.
+
+## Armadilhas já identificadas
+
+- NotasFiscais tem 39 colunas e 12 medidas, não o esquema antigo de 23.
+- WSH atual vem de WSH_DOC com corte local de 45 dias e deduplicação; não orientar correção exclusiva em WSH_DOC_CUR.
+- Mãe/filha usa menor NF numérica por delivery; CNPJ usa JGZZ_FISCAL_CODE; categoria EMBREAGEM_DSH não está implementada.
+- Guia tem precedência sobre aptidão; presença em pasta de guia não libera a nota.
+- STATUS_CICLO é JA PROCESSADA/SEM CHAVE/PENDENTE no refresh, não JA_IMPRESSO ao vivo.
+- Restauração do modelo não reverte movimento de PDFs nem registros externos.
+
+## Incidente e retorno
+
+Suspender novos disparos na falha parcial. Guardar ID/horário de execução, filtros, versões e relação restrita de chaves. Conferir lista SharePoint e arquivos antes de retry. Restaurar versão homologada pelo processo aprovado e reconciliar efeitos externos. Não apagar histórico para forçar reimpressão.
+
+Transferência concluída somente após titular/substituto e negócio assinarem o checklist; nenhuma assinatura foi obtida nesta revisão estática.
+
+<details>
+<summary>Nota de sessão de julho/2026: contexto histórico, não estado atual nem ordem de deploy</summary>
+
 > Documento de contexto para continuar o trabalho em qualquer sessão do Copilot
 > (inclusive ao migrar do Codespace para o VS Code local). Leia isto primeiro.
 > Última atualização: 2026-07-27.
@@ -90,3 +138,5 @@ FLAG = "EMBREAGEM_DSH" se item categoria BRA MFG='A' E prioridade='DIRECT SHIPME
 - CHAVE_ACESSO = CLL_F031.ATTRIBUTE2 (44 díg, sem prefixo DFE). NOTA_MAE = Text.Middle(chave,27,7).
 - ORDEM = index após sort PAGA_GUIA desc, SUB_LOC asc, DELIVERY asc, NF asc.
 - APTA = "Sim" se STATUS=FINALIZADO e CASE_RILA=OK e CHAVE_LEN=44.
+
+</details>

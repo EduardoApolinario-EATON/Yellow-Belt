@@ -1,5 +1,9 @@
 # Análise do Arquivo Premissas.xlsx (Macro Antiga)
 
+> **Revisão documental: 2026-10-14.** Estudo histórico da planilha, não schema obrigatório nem plano de teste homologado da ferramenta atual. As sugestões de importar todas as 51 colunas ou usar dados reais devem ser reavaliadas.
+
+NotasFiscais possui 39 colunas conforme [Dicionário atual](../../04_Improve/01_PowerBI/01_Dataset_Schema.md). Dados de cliente/NF não devem ser usados em testes ou publicados sem autorização/anonimização. O estudo não comprova código VBA, regras de fluxo nem equivalência de dados; validar paridade com negócio e TI.
+
 > O que foi recebido, o que contém e como pode ajudar no TO-BE.
 > Última atualização: 2026-06-09
 

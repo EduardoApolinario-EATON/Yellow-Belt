@@ -1,5 +1,9 @@
 # 🤖 Power Automate — Classificação Automática
 
+> **Índice revisado: 2026-10-14.** Três ações funcionais confirmadas: atualizar modelo, paga guias e classificar PDFs em SharePoint. Os documentos desta pasta são desenho histórico; não foram confrontados com exports dos fluxos, que não estão disponíveis.
+
+Rótulos da cópia: ATUALIZAR DATASET, PROCESSAR PDFs, Paga Guia e PAGA GUIA [TESTE]. O teste não é rotina autorizada. Mapeamento dos fluxos, entradas/saídas, filtros, concorrência, histórico e licenças: [P03-P07/P12](../../03_Analyze/07_Open_Questions.md). Ver [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md); não presumir limite Free nem criar um fluxo substituto a partir destes exemplos.
+
 > Automatizar a classificação e organização de PDFs usando Power Automate Cloud Free.  
 > **Último update:** 2026-06-22
 

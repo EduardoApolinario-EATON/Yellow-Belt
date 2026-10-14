@@ -1,5 +1,9 @@
 # 👤 Fluxo do Operador — TO-BE
 
+> **Revisão: 2026-10-14.** Fluxo original substituído operacionalmente pelo [Manual do Operador](../../05_Control/05_Manual_Operador.md) e [Guia Rápido](../../docs_ferramenta/02_Modo_de_Uso_Operador.md). O restante é histórico de desenho, não rotina liberada.
+
+Usar rótulos atuais ATUALIZAR DATASET, PROCESSAR PDFs e Paga Guia; não usar PAGA GUIA [TESTE]. Confirmar PDFs na biblioteca online, conciliar por chave, aguardar conclusão e conferir resultados antes de impressão. Não repetir automaticamente após falha parcial nem presumir que filtro visual limita o fluxo.
+
 > Passo-a-passo: o que o operador faz no novo processo.  
 > **Último update:** 2026-06-22
 

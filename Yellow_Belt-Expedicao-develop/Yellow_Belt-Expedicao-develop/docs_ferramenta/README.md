@@ -1,4 +1,37 @@
-# 📦 Ferramenta de Expedição AFT — Documentação
+# Documentação da Ferramenta - Expedição AFT
+
+> **Revisão vigente: 2026-10-14.** Pacote em Markdown para treinamento e transferência técnica. A liberação operacional ainda depende das pendências de homologação.
+
+## Entrega por público
+
+| Documento | Público | Conteúdo |
+|---|---|---|
+| [Guia rápido](02_Modo_de_Uso_Operador.md) | Operador | Conferir rodada, atualizar modelo, processar PDFs, segregar pendências e imprimir |
+| [Manual completo](../05_Control/05_Manual_Operador.md) | Expedição | Telas, botões, passos, exceções, impressão, histórico, reimpressão e contatos a confirmar |
+| [Manual técnico](01_Documentacao_Tecnica.md) | TI/BI/Automação | Linhagem, regras M/DAX, limites, suporte, publicação, rollback e testes |
+| [Dicionário](../04_Improve/01_PowerBI/01_Dataset_Schema.md) | Integração/manutenção | Contrato das 39 colunas de NotasFiscais |
+| [Handoff](../04_Improve/05_Implementacao/HANDOFF.md) | TI que assume a ferramenta | Artefatos, acessos, evidências e primeira manutenção |
+| [Plano de controle](../05_Control/01_Plano_de_Controle.md) | Supervisor | Reconciliação, acompanhamento e responsabilidade por papel |
+| [Pendências P01-P19](../03_Analyze/07_Open_Questions.md) | Aprovadores | O que falta para homologar e entregar a rotina |
+
+## Base da revisão
+
+Arquivos da [cópia atual do Power BI](../../../Dataset/README.md), documentação DMAIC, queries e referências textuais do legado. Confirmação do responsável: Power BI, atualização do modelo, paga guias e classificação de PDFs em SharePoint conforme Lista de Impressão funcionam. Código dos fluxos, configuração upstream e execuções reais não foram auditados nesta revisão.
+
+O orquestrador `mobility-powerbi-architecture` continua como fonte oficial do PBIP. Não há link local para esse outro repositório nesta cópia. Não tratar estudos, exemplos, prompts de construção ou roteiro offline como implementação atual.
+
+## Pendências antes da entrega operacional
+
+Preencher ambiente/link, caminhos, contatos, SLA, rotina de guia e download; homologar filtros versus universo do fluxo, duplicidade, falha parcial, impressão e recuperação. Obter aprovação de Expedição, Fiscal e TI. Os campos “a confirmar” são lacunas explícitas, não configurações padrão sugeridas.
+
+## Versões e manutenção
+
+Markdown é a entrega vigente. PDFs antigos desta pasta não foram atualizados e não devem acompanhar a entrega como se fossem desta revisão. Exportar PDF futuramente apenas após aprovação, conferindo tabelas, links, quebras e diagramas no arquivo final; nenhuma ferramenta de export foi validada aqui.
+
+Atualizar dicionário/regras quando mudar TMDL; manual quando mudar tela, botão ou procedimento; handoff quando mudar ambiente, fluxo, conexão ou responsável. Preservar histórico de medições e decisões, sem reapresentá-lo como resultado atual. Aprovação documental: a confirmar.
+
+<details>
+<summary>Índice de agosto/2026: histórico, não pacote vigente</summary>
 
 > Automação da **classificação e ordenação de Notas Fiscais** da Expedição (Eaton Valinhos / Aftermarket), substituindo a macro VBA legada por **Power BI + Power Automate**.
 > **Última atualização:** 2026-08-31
@@ -33,7 +66,7 @@ flowchart LR
 | — | [01_Documentacao_Tecnica.md](01_Documentacao_Tecnica.md) | Técnico / manutenção | 🚧 em construção |
 | — | [Manual do Operador (completo)](../05_Control/05_Manual_Operador.md) | Operador (chão) | ✅ existente |
 | — | [Relatório da Solução em 3 Estágios](../04_Improve/11_Relatorio_Estagios.md) | Gestão / visão geral | ✅ existente |
-| — | [HANDOFF técnico do modelo](../../../mobility-powerbi-architecture-codespace-literate-pancake-r7gjv6qjq5rq2r6v/reports/EXPEDICAO_AFT/HANDOFF.md) | Técnico (no repo do orquestrador) | ✅ existente |
+| — | HANDOFF externo no repositório mobility-powerbi-architecture, em reports/EXPEDICAO_AFT/HANDOFF.md; não disponível nesta cópia | Técnico (no repo do orquestrador) | Referência histórica |
 
 > **A construir:** Guia do Supervisor/Gestor (KPIs) e Operação & Manutenção (refresh, limpeza de pastas). Ver seção "Próximos" no fim.
 
@@ -65,3 +98,5 @@ flowchart LR
 - [ ] `03_Operacao_e_Manutencao.md` — refresh dos dataflows, `DaysText`, limpeza de pastas SAIDA, troubleshooting.
 - [ ] `04_Governanca.md` — DEV/PROD, dataflows compartilhados, decisões do dono.
 - [ ] Mover/consolidar o Manual do Operador para cá (hoje em `05_Control`).
+
+</details>

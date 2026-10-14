@@ -1,5 +1,9 @@
 # Análise — Query 1 (IMPRESSÃO PART 1)
 
+> **Revisão documental: 2026-10-14.** Análise histórica da query, não especificação da página Monitor atual. No modelo atual MOTIVO é derivado em M e prioriza comprimento inválido antes dos erros fiscal/delivery.
+
+Fonte atual e tratamentos: [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md) e [Manual do Operador](../05_Control/05_Manual_Operador.md). Não atribuir CHAVE INVALIDA automaticamente a PDF ilegível.
+
 > Monitor de elegibilidade fiscal das NFs, formatado como dashboard SQL.
 > Fonte: `queries/IMPRESSAO_PART_1.sql`.
 

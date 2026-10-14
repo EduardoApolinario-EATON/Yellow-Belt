@@ -1,5 +1,9 @@
 # 📋 Estratégia TO-BE — Visão Geral
 
+> **Revisão: 2026-10-14.** A estratégia abaixo é planejamento histórico. Estado atual: Power BI e botões de atualizar modelo, paga guias e processar PDFs em SharePoint funcionais conforme responsável; produção, homologação e ganho medido não confirmados.
+
+Arquitetura observada: múltiplos Bronze -> modelo Import/M/DAX -> relatório -> fluxos externos -> conferência/impressão humana. Não presumir dataflow dedicado, licença Free suficiente ou ausência de controles manuais. Ver [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md) e [pendências](../03_Analyze/07_Open_Questions.md).
+
 > Solução integrada: Power BI + Power Automate + SharePoint.  
 > **Objetivo:** Reduzir ciclo de 4h para ~30 min via automação de roteamento de NFs.  
 > **Último update:** 2026-06-22

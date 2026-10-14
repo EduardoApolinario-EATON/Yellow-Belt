@@ -1,5 +1,9 @@
 # Mapa de Processo AS-IS
 
+> **Revisão documental: 2026-10-14.** Mapa do processo legado, mantido para comparação; não representa a sequência atual dos botões/fluxos.
+
+O fluxo atual confirmado inclui modelo Power BI, atualização e classificação de PDFs em SharePoint. Consultar a rotina vigente no [Manual do Operador](../05_Control/05_Manual_Operador.md). Ainda confirmar download, paga guias, caminhos e liberação fiscal; não inferir eliminação de todas as tarefas humanas.
+
 > Mapa BPI do processo atual de expedição (impressão e organização de NFs).
 > Última atualização: 2026-05-28
 

@@ -1,5 +1,55 @@
 # Open Questions — Pendências para Resolver
 
+> **Registro vigente: 2026-10-14.** Substitui a priorização de junho no anexo. Não considerar funcionalidades já confirmadas como bloqueios de viabilidade; o foco atual é homologação, continuidade e entrega operacional.
+
+## Confirmado nesta revisão
+
+- Dataset é cópia atual; fonte oficial permanece no orquestrador `mobility-powerbi-architecture`.
+- Power BI e os botões de atualização do modelo, paga guias e processamento de PDFs funcionam, conforme responsável.
+- O processamento classifica PDFs em pastas SharePoint conforme a ordem da Lista de Impressão.
+- Entrega documental solicitada apenas em Markdown; informações operacionais ausentes devem ficar a confirmar.
+
+## Pendências de entrega e transferência
+
+Todas as linhas abaixo estão **a confirmar**. O papel indicado é sugestão de responsabilidade, não nomeação de pessoa. Prazo e aprovador devem ser preenchidos na homologação.
+
+| ID | Prioridade | Informação / evidência necessária | Papel | Critério de fechamento |
+|---|---|---|---|---|
+| P01 | Antes da rotina liberada | Ambiente autorizado, link do relatório e status produção/piloto | BI + supervisor | Acesso validado e ambiente registrado |
+| P02 | Antes da rotina liberada | Caminhos de PDFs, biblioteca, entrada, destinos e identificação de rodada | Automação + Expedição | Um ciclo acompanhado com origem/destino por chave |
+| P03 | Antes da rotina liberada | Export dos fluxos e mapeamento dos quatro visuais | Automação | Três fluxos funcionais identificados; teste segregado |
+| P04 | Antes da rotina liberada | Universo consultado pelo fluxo e efeito dos filtros do relatório | Automação + BI | Teste demonstra exatamente quais chaves são processadas |
+| P05 | Antes da rotina liberada | Procedimento do botão Paga Guia: entrada, saída, destinatários, retorno e liberação | Fiscal + Automação | Runbook aprovado sem pressupor pagamento automático |
+| P06 | Antes da rotina liberada | Bloqueio de duplicação, chave única, concorrência e falha parcial | Automação + TI | Duplo clique/retry não gera duplicação não autorizada |
+| P07 | Antes da rotina liberada | Momento da gravação em NFS_IMPRESSAS e evidência de impressão física | Automação + Expedição | Processado e impresso distinguíveis e reconciliáveis |
+| P08 | Antes da rotina liberada | Método e ordem de impressão; reimpressão autorizada | Expedição + TI | Lote de teste e recuperação de interrupção aprovados |
+| P09 | Antes da rotina liberada | Aptidão, guia com nota não apta, mãe/filha, prisma ausente e múltiplos locators | Fiscal + Armazém | Casos de aceite documentados e aprovados |
+| P10 | Antes da rotina liberada | Contatos titulares/substitutos e canal de incidente | TI + supervisor | Escalonamento testado e contatos preenchidos |
+| P11 | Continuidade técnica | Refresh real de cada origem, encadeamento, janelas e DaysText upstream | Dados/orquestrador | Horários e dependências registrados; origem antes do modelo |
+| P12 | Continuidade técnica | Permissões, contas de conexão, licenças, limites API/refresh e DLP | TI/plataforma | Validação no tenant e substituto de proprietário |
+| P13 | Continuidade técnica | CNPJ de filial, validação fiscal de chave e vigência de impostos | Fiscal + Dados | Regras aceitas ou lacunas com tratamento aprovado |
+| P14 | Continuidade técnica | Fuso CREATION_DATE, filtros de faturamento e recorte 45 dias WSH | Dados | Amostra por horário/data e cobertura comprovadas |
+| P15 | Continuidade técnica | Backup, restauração, publicação e rollback no oficial | TI/BI | Recuperação testada incluindo efeitos externos |
+| P16 | Continuidade técnica | Guarda/limpeza de PDFs, logs e histórico; acesso a dados fiscais | TI + Compliance | Política aprovada sem destruir memória de processamento |
+| P17 | Medição | Baseline aprovado, volume/cadência e ganhos observados | Yellow Belt + supervisor | Amostra, período, fonte, método e aprovação registrados |
+| P18 | Rotinas adicionais | Download SYNCHRO, comando *DN e etiquetas | Expedição + TI | Procedimentos acompanhados; não inferidos do nome da página |
+| P19 | SLA | Tempos esperados e limiares de suporte/refresh/fiscal | Gestores de cada serviço | Valores aprovados e medição disponível |
+
+## Lacunas técnicas observadas
+
+O modelo não valida DV/dígitos da chave; CNPJ não garante filial/14 dígitos; não implementa categoria EMBREAGEM_DSH; Qtd Excecoes sobrepõe guia; NFS_IMPRESSAS é Import; auxiliar MesmaNF_OutroLocator é vazia. São fatos do código, não decisões automáticas de correção. Aceitar ou corrigir cada lacuna no artefato oficial com negócio e TI.
+
+Não modificar fluxos ou regras fiscais nesta revisão documental. Materiais binários antigos, exemplos e testes offline não comprovam a versão operacional atual. PDFs de manuais não foram regenerados.
+
+## Protocolo de aprovação
+
+Para cada Pxx registrar resposta, evidência restrita, ambiente/versão, aprovador, data e tratamento de risco. Encerrar treinamento e transferência apenas após os itens de rotina liberada; pendências restantes precisam de responsável e prazo aceitos.
+
+Referências: [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md), [Manual do Operador](../05_Control/05_Manual_Operador.md), [Checklist](../04_Improve/05_Implementacao/02_Checklist.md).
+
+<details>
+<summary>Perguntas e decisões históricas de junho/2026: não representam o estado atual</summary>
+
 > Perguntas críticas para a implementação Opção D: Power BI Pro (dataflow de ingestão → dataset) + Power Automate Free + OneDrive/SharePoint.
 > Última atualização: 2026-06-23
 
@@ -146,3 +196,5 @@ Marque ✅ quando responder.
 5. **R.1 a R.8** → Supervisor Expedição + Fiscal (lógica de roteamento/classificação)
 6. **1.1 + 1.6** → Time Fiscal (regras)
 7. **2.8 + 2.9** → TI/Suporte EBS (performance)
+
+</details>

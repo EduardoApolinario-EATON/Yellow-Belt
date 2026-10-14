@@ -1,5 +1,11 @@
 # Baseline AS-IS — Linha de base quantitativa
 
+> **Revisão documental: 2026-10-14.** Os valores abaixo são baseline qualitativo/reportado de maio/2026 e projeções, não série medida nem resultados da versão atual. A própria coleta de cinco dias estava pendente. Preservados sem validação numérica nesta revisão.
+
+Não misturar 2h12 de organização manual deste BPI com a estimativa de 1h30 usada em outros documentos. Volume, cadência e ganho devem ser reconfirmados com amostra, período e aprovador. Cinco dias de exceção fiscal não são SLA nem média comprovada.
+
+Ver [plano de coleta](03_Coleta_de_Dados.md), [indicadores](04_Indicadores.md) e [P17/P19](../03_Analyze/07_Open_Questions.md).
+
 > Tempos, volume e distribuição do processo atual de expedição.
 > Última atualização: 2026-05-28 (dados qualitativos do BPI; coleta dos 5 dias pendente)
 

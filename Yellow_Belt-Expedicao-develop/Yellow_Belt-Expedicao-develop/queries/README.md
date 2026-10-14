@@ -1,5 +1,11 @@
 # queries/ — Queries originais (AS-IS)
 
+> **Revisão documental: 2026-10-14.** Referências históricas para comparar regras; não são consultas executadas diretamente pelo modelo atual. O comportamento da cópia está no [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md) e no [Mapa de Regras](../04_Improve/07_Mapa_de_Regras.md).
+
+QUERY_AFTK_ORIGINAL.sql contém somente comentários/nota técnica, não a query PL/SQL completa executável. As demais consultas históricas dependem do contexto EBS, views e parâmetros; não executar em produção sem dono e ambiente autorizado. Comentários sobre estado DEV/pendências e “fonte de verdade” descrevem contexto antigo, não contrato integral vigente.
+
+Paridade precisa de amostra autorizada: filtros de canceladas/datas, CNPJ de filial, agrupamento RILA/mãe-filha e categoria EMBREAGEM_DSH diferem do modelo atual. Não alterar SQL de origem para apenas igualar documentação.
+
 > Cópias das queries SQL originais usadas no fluxo AS-IS, antes da refatoração Opção D.
 > Última atualização: 2026-05-28
 

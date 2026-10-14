@@ -1,5 +1,9 @@
 # Macro Antiga
 
+> **Revisão documental: 2026-10-14.** Referência histórica para engenharia reversa, não rotina da ferramenta atual. As instruções antigas de depósito abaixo não autorizam versionar binários ou dados reais.
+
+Não comitar macro/planilha com CNPJ, chaves, credenciais ou tokens. Usar export textual sanitizado e amostras anonimizadas aprovadas; segredos devem permanecer no mecanismo corporativo seguro, nunca em documentação/chamado. Regras atuais e diferenças estão no [Mapa de Regras](../../04_Improve/07_Mapa_de_Regras.md). Presença de arquivo legado não comprova equivalência integral ao modelo.
+
 Pasta destinada ao arquivo `.xlsm` (ou equivalente) da macro que gerava os PDFs classificados das NFs antes da atualização do SYNCHRO quebrar a integração.
 
 ## O que colocar aqui

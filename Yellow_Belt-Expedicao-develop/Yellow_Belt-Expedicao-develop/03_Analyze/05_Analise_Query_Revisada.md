@@ -1,5 +1,9 @@
 # Análise — Query 3 (EXPEDIÇÃO REVISADA)
 
+> **Revisão documental: 2026-10-14.** Referência de paridade do legado, não prova de equivalência integral ao PBIP atual.
+
+Diferenças observadas: canceladas podem permanecer no modelo; CNPJ usa JGZZ_FISCAL_CODE; não há categoria EMBREAGEM_DSH; mãe/filha usa menor NF da delivery. Ver [Mapa de Regras](../04_Improve/07_Mapa_de_Regras.md) e validar amostra autorizada antes de aceitar diferenças.
+
 > Query principal do processo. Gera o pacote lógico de impressão das NFs.
 > Fonte: `queries/QUERY_EXPEDICAO_REVISADA.sql`.
 

@@ -1,5 +1,9 @@
 # 📈 Ganho Esperado — Antes vs. Depois
 
+> **Revisão: 2026-10-14.** Todos os ganhos abaixo são projeções históricas, não resultado medido da versão atual. Não apresentar tempo “5 min”, redução percentual ou economia como compromisso operacional.
+
+Baseline qualitativo registra 2h12 de organização manual; outros documentos usavam 1h30 com escopo diferente/não reconciliado. Medir antes/depois por rodada e separar processamento, espera, trabalho humano e impressão física; registrar volume, mix, período e aprovação. Ver [Baseline](../02_Measure/01_Baseline_AS_IS.md), [Coleta](../02_Measure/03_Coleta_de_Dados.md) e [P17](../03_Analyze/07_Open_Questions.md).
+
 > Impacto quantificado da solução.  
 > **Último update:** 2026-06-22
 

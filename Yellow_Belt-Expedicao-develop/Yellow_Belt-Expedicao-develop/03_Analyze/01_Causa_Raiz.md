@@ -1,5 +1,9 @@
 # Causa Raiz — Ishikawa + 5 Porquês
 
+> **Revisão documental: 2026-10-14.** Diagnóstico do processo legado, não causa automática de incidente atual. A revisão estática não validou todas as hipóteses com operação ou dados reais.
+
+Para falhas atuais, seguir o [runbook técnico](../docs_ferramenta/01_Documentacao_Tecnica.md): validar fontes, joins, filtros, refresh e execução. Locator ausente não tem causa única comprovada; classificação funcional não demonstra que todo retrabalho foi eliminado.
+
 > Análise de causa-raiz do gargalo de 2h12 de separação manual por prisma (Bloco 5 do AS-IS).
 > Última atualização: 2026-05-28
 

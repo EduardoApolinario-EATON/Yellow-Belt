@@ -1,5 +1,20 @@
 # SLAs e Alertas
 
+> **Revisão: 2026-10-14.** Tempos e alertas abaixo são propostas históricas, não acordos aprovados nem funcionalidades demonstradas nesta cópia.
+
+## Acordos a formalizar
+
+| Serviço | Definir | Evidência de medição |
+|---|---|---|
+| Refresh/origens | Janela, cadência, tempo máximo, responsável/substituto | Históricos de atualização separados |
+| Automação | Tempo esperado, falha parcial, prioridade e retorno | Histórico de fluxo com ID/horário |
+| Fiscal/guia | Prazo de análise/liberação e canal | Registro aprovado de pendência/retorno |
+| Acesso/impressora | Atendimento e recuperação | Chamado e lote afetado |
+
+Enquanto não houver SLA aprovado, não publicar tempos como “5 min” ou “30 min”. Em falha parcial, suspender novo disparo e escalar; não aguardar um limiar arbitrário para impedir duplicação. Contatos e valores: [P10/P19](../03_Analyze/07_Open_Questions.md). Execução de notificações/alertas automáticos requer export do fluxo; não foi comprovada.
+
+## Propostas históricas
+
 > Limites operacionais e triggers de notificação do TO-BE.
 > Última atualização: 2026-05-28
 

@@ -1,5 +1,9 @@
 # Análise — Query 2 (IMPRESSÃO PART 2 / Óleo)
 
+> **Revisão documental: 2026-10-14.** Referência da query legada. O modelo atual reúne normal e óleo; OLEO exige APTA Sim e ausência de paga guia, pois guia tem precedência.
+
+Validar filtros da página Óleo e rotina física com supervisor; definição atual no [Mapa de Regras](../04_Improve/07_Mapa_de_Regras.md). Não presumir que campos presentes no SQL existam no contrato atual.
+
 > Fluxo específico de NFs de itens de óleo.
 > Fonte: `queries/IMPRESSAO_PART_2_OLEO.sql`.
 

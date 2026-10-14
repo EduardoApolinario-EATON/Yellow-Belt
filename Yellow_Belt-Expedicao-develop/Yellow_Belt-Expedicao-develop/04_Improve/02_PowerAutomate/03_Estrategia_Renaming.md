@@ -1,5 +1,9 @@
 # 📝 Estratégia de Renaming — Prefixos para Impressão
 
+> **Revisão: 2026-10-14.** Estratégia original, não contrato vigente do nome. No modelo atual NOME_ARQUIVO é calculado em M; confirmar no export se o fluxo o aplica sem alteração.
+
+Padrões atuais: `EXPEDICAO <L><pos> - NF <nf>.pdf`, `PAGA GUIA <L><pos> - NF <nf>.pdf` ou `DFE<chave>.pdf`, sem data. ORDEM_CLASSIFICACAO é inteira; A/B/C/D pertence ao nome. Filtro não renumera. D agrupa posições >=1000 e não garante sort lexical em cinco ou mais dígitos. Validar ordem do spooler, colisão, retry e lote interrompido; não prometer ordem física automática. Ver [Manual Técnico](../../docs_ferramenta/01_Documentacao_Tecnica.md).
+
 > Como garantir que PDFs sejam impressos na ordem correta usando prefixos.  
 > **Último update:** 2026-06-22
 

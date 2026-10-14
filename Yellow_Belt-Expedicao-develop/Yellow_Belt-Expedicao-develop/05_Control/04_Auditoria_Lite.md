@@ -1,5 +1,17 @@
 # Auditoria Lite
 
+> **Revisão: 2026-10-14.** Critérios atuais de trilha e reconciliação; implementação dos logs/controles propostos e retenção precisam de confirmação. O roteiro antigo não comprova auditoria implantada.
+
+## Trilha mínima de uma rodada
+
+Registrar operador, ambiente/versão, rodada, filtros, horário/ID de execução, chaves esperadas e arquivos presentes. Reconciliar cada chave com decisão do modelo, nome/destino efetivo, registro em NFS_IMPRESSAS e conferência de impressão física. Separar rejeitado, sem PDF, processado, impresso e pendente; esses estados não são todos colunas já implementadas.
+
+Notas de reimpressão: autorização, motivo e lote afetado; não apagar chave do histórico como substituto de trilha. Registrar falhas parciais e retries. DataImpressao é nome de campo, não comprovação automática de spooler. Definir unicidade, retenção, acesso e restauração com TI/Compliance.
+
+Guardar documentos fiscais em canal restrito. Nenhuma nota real é necessária em issue pública. Ver [P06/P07/P15/P16](../03_Analyze/07_Open_Questions.md), [Checklist](../04_Improve/05_Implementacao/02_Checklist.md) e [Manual Técnico](../docs_ferramenta/01_Documentacao_Tecnica.md).
+
+## Roteiro histórico
+
 > Como as SharePoint Lists `EXP_CICLOS_LOG` e `EXP_FALHAS_LOG` registram o que aconteceu.
 > Última atualização: 2026-05-28
 
